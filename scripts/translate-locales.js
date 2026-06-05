@@ -208,7 +208,7 @@ const manualEn = {
     "zhenqiS3": "Zhenqi Pool III",
     "zhenqiS3_desc": "Improved structure makes electric field storage more efficient, forming structural deposits that allow storing more Zhenqi.",
     "zhenqiS4": "Zhenqi Pool IV",
-    "zhenqiS4_desc": "This pool uses magnetism to draw and maintain electrons from surrounding objects, allowing Zhenqi to be stored outside the pool. When Zhenqi inside is depleted, external reserves can be called upon,容纳远超前阶的真气。",
+    "zhenqiS4_desc": "This pool uses magnetism to draw and maintain electrons from surrounding objects, allowing Zhenqi to be stored outside the pool. When Zhenqi inside is depleted, external reserves can be called upon, accommodating far more Zhenqi than previous tiers.",
     "zhenqiS5": "Zhenqi Pool V",
     "zhenqiS5_desc": "Using nano-techniques, cluster-type pools are improved to near-atomic scale, overlapping electric fields to exponentially increase Zhenqi storage capacity.",
     "zhenqiS6": "Zhenqi Pool Tiandao",
@@ -900,11 +900,172 @@ const manualEn = {
     "lingzhenDuanModal": "Array Segment Cost Calculator",
 };
 
-// Generate fr.json with French translations from the same manualEn map
-// For fr, we use the existing fr.json as base and update only the changed values
-const manualFr = {};
-// We'll use the en values as base for fr and add French translations for key terms
-// For now, use en values as fallback for fr since the game is primarily zh/en
+// French term replacement map: old French space terms -> new cultivation French terms
+// These replace residual old-game terminology in the French translations
+const frTermReplacements = [
+    // Resource names (French -> cultivation French)
+    [/\bÉnergie\b/g, 'Zhenqi'],
+    [/\bénergie\b/g, 'zhenqi'],
+    [/\bEnergie\b/g, 'Zhenqi'],
+    [/\benergie\b/g, 'zhenqi'],
+    [/\bPlasma\b/g, 'Yuanshen'],
+    [/\bplasma\b/g, 'yuanshen'],
+    [/\bMétéorite\b/g, 'Tiandao'],
+    [/\bmétéorite\b/g, 'tiandao'],
+    [/\bMeteore\b/g, 'Tiandao'],
+    [/\bmeteore\b/g, 'tiandao'],
+    [/\bCarbone\b/g, 'Tanjing'],
+    [/\bcarbone\b/g, 'tanjing'],
+    [/\bPétrole\b/g, 'Lingye'],
+    [/\bpétrole\b/g, 'lingye'],
+    [/\bPetrole\b/g, 'Lingye'],
+    [/\bpetrole\b/g, 'lingye'],
+    [/\bMétal\b/g, 'Pierre Spirituelle'],
+    [/\bmétal\b/g, 'pierre spirituelle'],
+    [/\bMetal\b/g, 'Pierre Spirituelle'],
+    [/\bmetal\b/g, 'pierre spirituelle'],
+    [/\bGemme\b/g, 'Baoshi'],
+    [/\bgemme\b/g, 'baoshi'],
+    [/\bBois\b/g, 'Lingmu'],
+    [/\bbois\b/g, 'lingmu'],
+    [/\bSilicium\b/g, 'Yunjin'],
+    [/\bsilicium\b/g, 'yunjin'],
+    [/\bUranium\b/g, 'Leiling'],
+    [/\buranium\b/g, 'leiling'],
+    [/\bLave\b/g, 'Huoyan'],
+    [/\blave\b/g, 'huoyan'],
+    [/\bLunarite\b/g, 'Yueshi'],
+    [/\blunarite\b/g, 'yueshi'],
+    [/\bMéthane\b/g, 'Miasma'],
+    [/\bméthane\b/g, 'miasma'],
+    [/\bMethane\b/g, 'Miasma'],
+    [/\bmethane\b/g, 'miasma'],
+    [/\bTitane\b/g, 'Xuangang'],
+    [/\btitane\b/g, 'xuangang'],
+    [/\bOr\b/g, 'Jinsha'],
+    [/\bArgent\b/g, 'Yinsha'],
+    [/\bargent\b/g, 'yinsha'],
+    [/\bHydrogène\b/g, 'Qingqi'],
+    [/\bhydrogène\b/g, 'qingqi'],
+    [/\bHydrogene\b/g, 'Qingqi'],
+    [/\bhydrogene\b/g, 'qingqi'],
+    [/\bHélium\b/g, 'Taiyi'],
+    [/\bhélium\b/g, 'taiyi'],
+    [/\bHelium\b/g, 'Taiyi'],
+    [/\bhelium\b/g, 'taiyi'],
+    [/\bGlace\b/g, 'Hanbing'],
+    [/\bglace\b/g, 'hanbing'],
+    [/\bScience\b/g, 'Wudao'],
+    [/\bscience\b/g, 'wudao'],
+    [/\bCarburant\b/g, 'Xuantan'],
+    [/\bcarburant\b/g, 'xuantan'],
+    [/\bAntimatière\b/g, 'Fanjie'],
+    [/\bantimatière\b/g, 'fanjie'],
+    [/\bAntimatiere\b/g, 'Fanjie'],
+    [/\bantimatiere\b/g, 'fanjie'],
+
+    // Building/concept names in French
+    [/\bBatterie\b/g, 'Réserve Zhenqi'],
+    [/\bbatterie\b/g, 'réserve zhenqi'],
+    [/\bEMC\b/g, 'Wuhua'],
+    [/\bNanoswarm\b/g, 'Chongqun'],
+    [/\bnanoswarm\b/g, 'chongqun'],
+    [/\bDyson\b/g, 'Sphère Tiandao'],
+    [/\bdyson\b/g, 'sphère tiandao'],
+    [/\bSegment\b/g, 'Lingzhen Duan'],
+    [/\bsegment\b/g, 'lingzhen duan'],
+
+    // Specific French phrases
+    [/mineur/gi, 'extracteur'],
+    [/Mineur/g, 'Extracteur'],
+    [/laboratoire/gi, 'salle de cultivation'],
+    [/Laboratoire/g, 'Salle de cultivation'],
+    [/usine/gi, 'atelier'],
+    [/Usine/g, 'Atelier'],
+    [/satellite/gi, 'disque spirituel'],
+    [/Satellite/g, 'Disque spirituel'],
+    [/Station spatiale/gi, 'Station de cultivation'],
+    [/vaisseau/gi, 'vaisseau spirituel'],
+    [/Vaisseau/g, 'Vaisseau spirituel'],
+    [/rocket/gi, 'vaisseau spirituel'],
+    [/Rocket/g, 'Vaisseau spirituel'],
+    [/Destruction\b/g, 'Suimie'],
+    [/destruction\b/g, 'suimie'],
+    [/boost d'énergie/gi, 'boost zhenqi'],
+    [/Boost d'énergie/gi, 'Boost Zhenqi'],
+    [/boost energie/gi, 'boost zhenqi'],
+    [/Boost energie/gi, 'Boost Zhenqi'],
+    [/boost batterie/gi, 'boost réserve zhenqi'],
+    [/Boost batterie/gi, 'Boost Réserve Zhenqi'],
+    [/boost de batterie/gi, 'boost réserve zhenqi'],
+    [/Boost de batterie/gi, 'Boost Réserve Zhenqi'],
+
+    // Tech names
+    [/technologie\b/gi, 'technique'],
+    [/Technologie\b/g, 'Technique'],
+    [/recherche\b/g, 'recherche'],
+    [/Recherche\b/g, 'Recherche'],
+
+    // Specific game concepts
+    [/Matière noire\b/g, 'Tiandao'],
+    [/matière noire\b/g, 'tiandao'],
+    [/Matiere noire\b/g, 'Tiandao'],
+    [/matiere noire\b/g, 'tiandao'],
+    [/Sphère de Dyson\b/gi, 'Sphère Tiandao'],
+    [/sphère de Dyson\b/gi, 'sphère Tiandao'],
+];
+
+// Manual French translations for keys that need complete replacement
+const manualFr = {
+    "notifications": "Notifications",
+    "off": "Désactivé",
+    "hardReset": "Réinitialisation complète",
+    "techTiandao0": "Initiation aux Fragments Tiandao",
+    "techTiandao0_desc": "Les Fragments Tiandao sont l'une des ressources les plus rares du domaine stellaire, raffinés artificiellement. Tous les Fragments Tiandao qui existaient autrefois dans le domaine stellaire ont été épuisés, et maintenant ils ne peuvent être raffinés qu'en utilisant le Zhenqi dans les Constructions.",
+    "techTiandao1": "Art de Collecte des Fragments Tiandao",
+    "techTiandao1_desc": "Rechercher des méthodes automatisées pour collecter les Fragments Tiandao sans effort personnel.",
+    "techTiandao2": "Art de Raffinage des Fragments Tiandao",
+    "techTiandao2_desc": "Rechercher des méthodes plus efficaces que le raffinage manuel pour obtenir des Fragments Tiandao.",
+    "techTiandao3": "Art de Condensation des Fragments Tiandao",
+    "techTiandao3_desc": "Débloque le bâtiment de Condensation des Fragments Tiandao. Augmente la relation de 29.",
+    "techTiandao4": "Art du Fourneau des Fragments Tiandao",
+    "techTiandao4_desc": "Débloque le bâtiment du Fourneau des Fragments Tiandao. Augmente la relation de 36.",
+    "auto": "Auto",
+    "stats": "Stats",
+    "distance": "Distance",
+    "production": "Production",
+    "total": "Total",
+    "totalProduction": "Production",
+    "totalBalance": "Balance",
+    "chance": "Chance",
+
+    // Keys with residual old terms after regex replacement
+    "help4_desc1": "Eh bien, ça ne s'appelle pas la Voie Céleste pour rien. La première chose à faire pour débloquer l'exploration interplanétaire est de construire un vaisseau spirituel. C'est le premier grand objectif que vous devez viser. Pour construire un vaisseau spirituel, vous avez besoin de beaucoup de ressources, et vous aurez probablement besoin d'utiliser des machines avancées pour les obtenir sans prendre un temps extrêmement long. Deuxièmement, son lancement nécessite 20 xuantan, qui peuvent être fabriqués dans des ateliers chimiques. Ceux-ci nécessitent une grande quantité de lingye et de tanjing pour être produits. Une fois que vous avez suffisamment de xuantan et que vous avez construit un vaisseau spirituel, appuyez sur le bouton de lancement pour déverrouiller l'exploration autour du système solaire et de nouvelles techniques et moyens d'obtenir des ressources.",
+    "zhenqiCangPane_desc": "Votre capacité de stockage a un maximum de 100 000 unités, le déverrouillage des réserves zhenqi vous permettra de l'augmenter.",
+    "zhenqiS1_desc": "Et le Seigneur Suprême dit, « qu'il y ait un stockage de zhenqi! », alors ces réserves sont tombées du ciel. ¯\\_(ツ)_/¯",
+    "zhenqiS2_desc": "La structure en miroir des réserves permet de stocker le zhenqi dans un champ électrique autour de la réserve, stockant plus de zhenqi.",
+    "zhenqiS4_desc": "Cette réserve utilise le magnétisme pour siphonner et maintenir les électrons des objets qui l'entourent afin que le zhenqi puisse être stocké à l'extérieur et être utilisé lorsque la réserve est vide, stockant ainsi beaucoup plus de zhenqi que les réserves précédentes.",
+    "zhenqiS5_desc": "Utilisant la nanotechnique, les réserves groupées ont été améliorées au niveau sub-atomique pour pouvoir maîtriser au niveau le plus fin les champs électriques, accroissant ainsi de manière exponentielle la quantité de zhenqi pouvant être stockée.",
+    "yuanshenT1": "Haut fourneau yuanshen",
+    "yuanshenT1_desc": "Le haut fourneau utilise l'électricité et le qingqi pour créer une substance yuanshen.",
+    "yuanshenT2": "Fosse yuanshen",
+    "baoshiPane_desc": "Les baoshi sont l'une des principales ressources. Ils sont utilisés pour les machines avancées et pour les outils et composants puissants. Ils sont plus utiles dans les dernières phases du jeu.",
+    "baoshiT1_desc": "Construit une pioche améliorée pour extraire des baoshi.",
+    "baoshiT2_desc": "Les perceuses avancées extraient des baoshi en masse. En raison de la fragilité du foret, il est plus lent que le foret lourd.",
+    "baoshiT3_desc": "Le foret diamant est l'un des forets les plus puissants du système solaire et, en tant que tel, peut collecter des baoshi plus rapidement que tout ce qui l'a précédé.",
+    "baoshiT4_desc": "La perceuse carbyne est l'un des instruments les plus puissants du système solaire et, en tant que tel, peut collecter des baoshi plus rapidement que tout ce qui l'a précédé.",
+    "techZhenqiCang1_desc": "Les réserves de niveau 1 améliorent la quantité de zhenqi que vous pouvez stocker.",
+    "techZhenqiCang2_desc": "Les réserves de niveau 2 améliorent la quantité de zhenqi que vous pouvez stocker.",
+    "techZhenqiCang3_desc": "Les réserves de niveau 3 améliorent la quantité de zhenqi que vous pouvez stocker.",
+    "techZhenqiCang4_desc": "Les réserves de niveau 4 améliorent la quantité de zhenqi que vous pouvez stocker.",
+    "techZhenqiCang5_desc": "Débloque le niveau 5 des réserves. Améliore la relation de 17 points.",
+    "techZhenqiCang6_desc": "Débloque les réserves sous vide. Améliore la relation de 15 points.",
+    "techYuanshen2_desc": "Cette recherche débloque le deuxième niveau de production de yuanshen, la Fosse yuanshen.",
+    "boostZhenqiCang_desc": "La capacité de stockage des réserves augmente de 1% à chaque niveau.",
+    "mijingBaoshi0_desc": "La première peinture représente une grande structure brillante et la plaque indique: 'Bien que je sois riche au-delà de toute comparaison, j'apprécie toujours l'ajout de ressources précieuses à ma collection. En échange de vos baoshi, de votre yinsha et de votre jinsha, je vous apprendrai quelque chose qui se trouve à l'intérieur de votre propre planète, vous permettant de trouver une ressource rare et un élément dangereux jamais trouvé.'",
+    "biluoMijingPane_desc": "Les chefs actuels de la galaxie et la faction la plus concernée par le maintien des choses telles qu'elles sont. Opposés au changement, ils ont un régime autoritaire et proposent principalement des mises à niveau concernant des structures telles que les Sphères Tiandao ou les Merveilles.",
+    "biluoChuanchengPane_desc": "Les chefs actuels de la galaxie et la faction la plus concernée par le maintien des choses telles qu'elles sont. Opposés au changement, ils ont un régime autoritaire et proposent principalement des mises à niveau concernant des structures telles que les Sphères Tiandao ou les Merveilles.",
+};
 
 // Build new en.json
 const newEn = {};
@@ -912,29 +1073,34 @@ for (const [key, zhVal] of Object.entries(zh)) {
     if (manualEn[key] !== undefined) {
         newEn[key] = manualEn[key];
     } else if (en[key] !== undefined) {
-        // Keep existing en value if we don't have a manual translation
-        // But check if the key is a star name - those should stay the same
         newEn[key] = en[key];
     } else {
-        // New key not in en - use the manual en or fall back to zh
         newEn[key] = zhVal;
     }
 }
 
-// Build new fr.json
-const newFr = {};
-for (const [key, zhVal] of Object.entries(zh)) {
-    if (fr[key] !== undefined) {
-        // Key exists in current fr - keep it if it's a star name or has been updated
-        newFr[key] = fr[key];
-    } else {
-        // New key not in fr - fall back to en, then zh
-        newFr[key] = newEn[key] || zhVal;
+// Build new fr.json with term replacements applied
+function replaceFrTerms(str) {
+    if (typeof str !== 'string') return str;
+    let result = str;
+    for (const [regex, replacement] of frTermReplacements) {
+        result = result.replace(regex, replacement);
     }
+    return result;
 }
 
-// Remove old keys from fr (keys that exist in fr but not in zh)
-// Already handled by iterating zh keys
+const newFr = {};
+for (const [key, zhVal] of Object.entries(zh)) {
+    if (manualFr[key] !== undefined) {
+        newFr[key] = manualFr[key];
+    } else if (fr[key] !== undefined) {
+        // Apply term replacements to existing French value
+        newFr[key] = replaceFrTerms(fr[key]);
+    } else {
+        // New key not in fr - use en value with French term replacements applied
+        newFr[key] = replaceFrTerms(newEn[key]) || zhVal;
+    }
+}
 
 import { fileURLToPath } from 'url';
 import path from 'path';
