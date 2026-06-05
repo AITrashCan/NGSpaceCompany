@@ -5,7 +5,7 @@
                 <div class="col">
                     <div class="row g-1 align-items-baseline justify-content-center">
                         <div class="col-auto d-flex align-items-center">
-                            <img :src="require(`../assets/interface/${data[id].source}.png`)" width="12" height="12" />
+                            <img :src="getIcon(data[id].source + '.png')" width="12" height="12" />
                         </div>
                         <div class="col-auto text-center">
                             <div class="small">{{ $t(data[id].source) }}</div>
@@ -19,7 +19,7 @@
                 <div class="col">
                     <div class="row g-1 align-items-baseline justify-content-center">
                         <div class="col-auto d-flex align-items-center">
-                            <img :src="require(`../assets/interface/${data[id].resource}.png`)" width="12" height="12" />
+                            <img :src="getIcon(data[id].resource + '.png')" width="12" height="12" />
                         </div>
                         <div class="col-auto text-center">
                             <div class="small">{{ $t(data[id].resource) }}</div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-12">
                     <div class="row gx-3 align-items-center">
-                        <div v-if="data['autoEmc'].count > 0" class="col-auto">
+                        <div v-if="data['autoWuhua'].count > 0" class="col-auto">
                             <button class="btn" :class="{ 'btn-outline':autoResource!=id, 'btn-success':autoResource==id }" @click="setAutoEmc(id)">
                                 {{ $t('auto') }}
                             </button>
@@ -48,6 +48,7 @@
 
 <script>
 import { mapState, mapActions, mapMutations } from 'vuex'
+import { getIcon } from '../utils/icons'
 
 export default {
     props: [ 'id' ],
@@ -71,6 +72,7 @@ export default {
         ...mapActions([
             'convert',
         ]),
+        getIcon,
         setAutoEmc(id) {
         
             if (this.autoResource == id) this.setAutoResource(null)

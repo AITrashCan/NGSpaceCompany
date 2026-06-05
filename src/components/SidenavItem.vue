@@ -6,7 +6,7 @@
             </div>
             <div class="row gx-2">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="require(`../assets/interface/${icon}`)" width="16" height="16" />
+                    <img :src="getIcon(icon)" width="16" height="16" />
                 </div>
                 <div class="col">
                     {{ $t(id) }}
@@ -52,6 +52,7 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
+import { getIcon } from '../utils/icons'
 
 export default {
     props: [ 'id', 'unlocked', 'icon', 'prod', 'count', 'storage', 'opinion', 'done', 'doneText', 'potential', 'problem' ],
@@ -67,6 +68,7 @@ export default {
         ...mapMutations([
             'setActivePane',
         ]),
+        getIcon,
     },
 }
 </script>

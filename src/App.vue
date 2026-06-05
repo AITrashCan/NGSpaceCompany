@@ -2,8 +2,8 @@
 
     <div v-if="!loaded" id="loadScreen">
         <div class="row row-cols-1 g-2 justify-content-center">
-            <div class="col text-center"><h1 class="text-light">NG Space Company</h1></div>
-            <div class="col text-center"><img id="loadLogo" style="width:25%; height:auto;" :src="require('./assets/whiteLogo.png')" /></div>
+            <div class="col text-center"><h1 class="text-light">天道长生录</h1></div>
+            <div class="col text-center"><img id="loadLogo" style="width:25%; height:auto;" :src="whiteLogo" /></div>
             <div class="col text-center"><h5 class="text-light">Reticulating Splines...</h5></div>
         </div>
     </div>
@@ -13,7 +13,7 @@
             <top-header>
             
                 <div class="col-auto">
-                    <img :src="require('./assets/whiteLogo.png')" width="42" height="42" alt="Game logo" />
+                    <img :src="whiteLogo" width="42" height="42" alt="Game logo" />
                 </div>
 
                 <div class="col text-truncate px-0">
@@ -36,86 +36,86 @@
             <inner-content data-simplebar>
                 <div class="row gx-2 gy-3 row-cols-1">
                 
-                    <sidenav-group id="energyHeading" :unlocked="data['energy'].unlocked">
-                        <sidenav-item id="energyPane" icon="energy.png" :unlocked="data['energy'].unlocked" :prod="data['energy'].prod" :problem="data['energy'].problem" />
-                        <sidenav-item id="batteryPane" icon="battery.png" :unlocked="data['energy'].unlocked" :count="data['energy'].count" :storage="data['energy'].storage" />
+                    <sidenav-group id="zhenqiHeading" :unlocked="data['zhenqi'].unlocked">
+                        <sidenav-item id="zhenqiPane" icon="zhenqi.png" :unlocked="data['zhenqi'].unlocked" :prod="data['zhenqi'].prod" :problem="data['zhenqi'].problem" />
+                        <sidenav-item id="zhenqiCangPane" icon="zhenqiCang.png" :unlocked="data['zhenqi'].unlocked" :count="data['zhenqi'].count" :storage="data['zhenqi'].storage" />
                     </sidenav-group>
                     
-                    <sidenav-group id="fabricatedHeading" :unlocked="data['carbon'].unlocked">
-                        <sidenav-item id="plasmaPane" icon="plasma.png" :unlocked="data['plasma'].unlocked" :prod="data['plasma'].prod" :count="data['plasma'].count" :storage="data['plasma'].storage" :problem="data['plasma'].problem" />
-                        <sidenav-item id="meteoritePane" icon="meteorite.png" :unlocked="data['meteorite'].unlocked" :prod="data['meteorite'].prod" :count="data['meteorite'].count" :storage="data['meteorite'].storage" :problem="data['meteorite'].problem" />
-                        <sidenav-item id="carbonPane" icon="carbon.png" :unlocked="data['carbon'].unlocked" :prod="data['carbon'].prod" :count="data['carbon'].count" :storage="data['carbon'].storage" :problem="data['carbon'].problem" />
+                    <sidenav-group id="teshuHeading" :unlocked="data['xuantan'].unlocked">
+                        <sidenav-item id="yuanshenPane" icon="yuanshen.png" :unlocked="data['yuanshen'].unlocked" :prod="data['yuanshen'].prod" :count="data['yuanshen'].count" :storage="data['yuanshen'].storage" :problem="data['yuanshen'].problem" />
+                        <sidenav-item id="tiandaoPane" icon="tiandao.png" :unlocked="data['tiandao'].unlocked" :prod="data['tiandao'].prod" :count="data['tiandao'].count" :storage="data['tiandao'].storage" :problem="data['tiandao'].problem" />
+                        <sidenav-item id="xuantanPane" icon="xuantan.png" :unlocked="data['xuantan'].unlocked" :prod="data['xuantan'].prod" :count="data['xuantan'].count" :storage="data['xuantan'].storage" :problem="data['xuantan'].problem" />
                     </sidenav-group>
 
-                    <sidenav-group id="earthResourcesHeading" :unlocked="data['metal'].unlocked">
-                        <sidenav-item id="oilPane" icon="oil.png" :unlocked="data['oil'].unlocked" :prod="data['oil'].prod" :count="data['oil'].count" :storage="data['oil'].storage" />
-                        <sidenav-item id="metalPane" icon="metal.png" :unlocked="data['metal'].unlocked" :prod="data['metal'].prod" :count="data['metal'].count" :storage="data['metal'].storage" />
-                        <sidenav-item id="gemPane" icon="gem.png" :unlocked="data['gem'].unlocked" :prod="data['gem'].prod" :count="data['gem'].count" :storage="data['gem'].storage" />
-                        <sidenav-item id="woodPane" icon="wood.png" :unlocked="data['wood'].unlocked" :prod="data['wood'].prod" :count="data['wood'].count" :storage="data['wood'].storage" />
-                        <sidenav-item id="siliconPane" icon="silicon.png" :unlocked="data['silicon'].unlocked" :prod="data['silicon'].prod" :count="data['silicon'].count" :storage="data['silicon'].storage" />
-                        <sidenav-item id="uraniumPane" icon="uranium.png" :unlocked="data['uranium'].unlocked" :prod="data['uranium'].prod" :count="data['uranium'].count" :storage="data['uranium'].storage" />
-                        <sidenav-item id="lavaPane" icon="lava.png" :unlocked="data['lava'].unlocked" :prod="data['lava'].prod" :count="data['lava'].count" :storage="data['lava'].storage" />
+                    <sidenav-group id="fansuHeading" :unlocked="data['lingstone'].unlocked">
+                        <sidenav-item id="lingyePane" icon="lingye.png" :unlocked="data['lingye'].unlocked" :prod="data['lingye'].prod" :count="data['lingye'].count" :storage="data['lingye'].storage" />
+                        <sidenav-item id="lingstonePane" icon="lingstone.png" :unlocked="data['lingstone'].unlocked" :prod="data['lingstone'].prod" :count="data['lingstone'].count" :storage="data['lingstone'].storage" />
+                        <sidenav-item id="baoshiPane" icon="baoshi.png" :unlocked="data['baoshi'].unlocked" :prod="data['baoshi'].prod" :count="data['baoshi'].count" :storage="data['baoshi'].storage" />
+                        <sidenav-item id="lingmuPane" icon="lingmu.png" :unlocked="data['lingmu'].unlocked" :prod="data['lingmu'].prod" :count="data['lingmu'].count" :storage="data['lingmu'].storage" />
+                        <sidenav-item id="yunjinPane" icon="yunjin.png" :unlocked="data['yunjin'].unlocked" :prod="data['yunjin'].prod" :count="data['yunjin'].count" :storage="data['yunjin'].storage" />
+                        <sidenav-item id="leilingPane" icon="leiling.png" :unlocked="data['leiling'].unlocked" :prod="data['leiling'].prod" :count="data['leiling'].count" :storage="data['leiling'].storage" />
+                        <sidenav-item id="huoyanPane" icon="huoyan.png" :unlocked="data['huoyan'].unlocked" :prod="data['huoyan'].prod" :count="data['huoyan'].count" :storage="data['huoyan'].storage" />
                     </sidenav-group>
 
-                    <sidenav-group id="innerResourcesHeading" :unlocked="data['lunarite'].unlocked">
-                        <sidenav-item id="lunaritePane" icon="lunarite.png" :unlocked="data['lunarite'].unlocked" :prod="data['lunarite'].prod" :count="data['lunarite'].count" :storage="data['lunarite'].storage" />
-                        <sidenav-item id="methanePane" icon="methane.png" :unlocked="data['methane'].unlocked" :prod="data['methane'].prod" :count="data['methane'].count" :storage="data['methane'].storage" />
-                        <sidenav-item id="titaniumPane" icon="titanium.png" :unlocked="data['titanium'].unlocked" :prod="data['titanium'].prod" :count="data['titanium'].count" :storage="data['titanium'].storage" />
-                        <sidenav-item id="goldPane" icon="gold.png" :unlocked="data['gold'].unlocked" :prod="data['gold'].prod" :count="data['gold'].count" :storage="data['gold'].storage" />
-                        <sidenav-item id="silverPane" icon="silver.png" :unlocked="data['silver'].unlocked" :prod="data['silver'].prod" :count="data['silver'].count" :storage="data['silver'].storage" />
+                    <sidenav-group id="lingjieHeading" :unlocked="data['yueshi'].unlocked">
+                        <sidenav-item id="yueshiPane" icon="yueshi.png" :unlocked="data['yueshi'].unlocked" :prod="data['yueshi'].prod" :count="data['yueshi'].count" :storage="data['yueshi'].storage" />
+                        <sidenav-item id="miasmaPane" icon="miasma.png" :unlocked="data['miasma'].unlocked" :prod="data['miasma'].prod" :count="data['miasma'].count" :storage="data['miasma'].storage" />
+                        <sidenav-item id="xuangangPane" icon="xuangang.png" :unlocked="data['xuangang'].unlocked" :prod="data['xuangang'].prod" :count="data['xuangang'].count" :storage="data['xuangang'].storage" />
+                        <sidenav-item id="jinshaPane" icon="jinsha.png" :unlocked="data['jinsha'].unlocked" :prod="data['jinsha'].prod" :count="data['jinsha'].count" :storage="data['jinsha'].storage" />
+                        <sidenav-item id="yinshaPane" icon="yinsha.png" :unlocked="data['yinsha'].unlocked" :prod="data['yinsha'].prod" :count="data['yinsha'].count" :storage="data['yinsha'].storage" />
                     </sidenav-group>
 
-                    <sidenav-group id="outerResourcesHeading" :unlocked="data['hydrogen'].unlocked">
-                        <sidenav-item id="hydrogenPane" icon="hydrogen.png" :unlocked="data['hydrogen'].unlocked" :prod="data['hydrogen'].prod" :count="data['hydrogen'].count" :storage="data['hydrogen'].storage" />
-                        <sidenav-item id="heliumPane" icon="helium.png" :unlocked="data['helium'].unlocked" :prod="data['helium'].prod" :count="data['helium'].count" :storage="data['helium'].storage" />
-                        <sidenav-item id="icePane" icon="ice.png" :unlocked="data['ice'].unlocked" :prod="data['ice'].prod" :count="data['ice'].count" :storage="data['ice'].storage" />
+                    <sidenav-group id="xianyuHeading" :unlocked="data['qingqi'].unlocked">
+                        <sidenav-item id="qingqiPane" icon="qingqi.png" :unlocked="data['qingqi'].unlocked" :prod="data['qingqi'].prod" :count="data['qingqi'].count" :storage="data['qingqi'].storage" />
+                        <sidenav-item id="taiyiPane" icon="taiyi.png" :unlocked="data['taiyi'].unlocked" :prod="data['taiyi'].prod" :count="data['taiyi'].count" :storage="data['taiyi'].storage" />
+                        <sidenav-item id="hanbingPane" icon="hanbing.png" :unlocked="data['hanbing'].unlocked" :prod="data['hanbing'].prod" :count="data['hanbing'].count" :storage="data['hanbing'].storage" />
                     </sidenav-group>
 
-                    <sidenav-group id="researchesHeading" :unlocked="data['science'].unlocked">
-                        <sidenav-item id="sciencePane" icon="science.png" :unlocked="data['science'].unlocked" :prod="data['science'].prod" :count="data['science'].count" />
-                        <sidenav-item id="technologiesPane" icon="technologies.png" :unlocked="data['science'].unlocked" />
+                    <sidenav-group id="wudaoHeading" :unlocked="data['wudao'].unlocked">
+                        <sidenav-item id="wudaoPane" icon="wudao.png" :unlocked="data['wudao'].unlocked" :prod="data['wudao'].prod" :count="data['wudao'].count" />
+                        <sidenav-item id="gongfaPane" icon="gongfa.png" :unlocked="data['wudao'].unlocked" />
                     </sidenav-group>
 
-                    <sidenav-group id="solSytemHeading" :unlocked="data['fuel'].unlocked">
-                        <sidenav-item id="fuelPane" icon="fuel.png" :unlocked="data['fuel'].unlocked" :prod="data['fuel'].prod" :count="data['fuel'].count" />
-                        <sidenav-item id="rocketPane" icon="rocket.png" :unlocked="data['rocket1'].unlocked" :done="data['rocket2'].count > 0" doneText="launched" />
-                        <sidenav-item id="innerSolarSystemPane" icon="innerSolarSystem.png" :unlocked="data['moon'].unlocked" :done="data['wonderStation'].count > 0" doneText="explored" />
-                        <sidenav-item id="outerSolarSystemPane" icon="outerSolarSystem.png" :unlocked="data['jupiter'].unlocked" :done="data['solCenter1'].count > 0" doneText="explored" />
+                    <sidenav-group id="mijingHeading" :unlocked="data['lingmai'].unlocked">
+                        <sidenav-item id="lingmaiPane" icon="lingmai.png" :unlocked="data['lingmai'].unlocked" :prod="data['lingmai'].prod" :count="data['lingmai'].count" />
+                        <sidenav-item id="mijingRukouPane" icon="mijingRukou.png" :unlocked="data['mijingRukou1'].unlocked" :done="data['mijingRukou2'].count > 0" doneText="launched" />
+                        <sidenav-item id="fanjieMijingPane" icon="fanjieMijing.png" :unlocked="data['yuejing'].unlocked" :done="data['mijingStation'].count > 0" doneText="explored" />
+                        <sidenav-item id="xianyuMijingPane" icon="xianyuMijing.png" :unlocked="data['suixing'].unlocked" :done="data['zaohuaRukou1'].count > 0" doneText="explored" />
                     </sidenav-group>
 
-                    <sidenav-group id="wondersHeading" :unlocked="data['wonderPrecious0'].unlocked">
-                        <sidenav-item id="wonderStationPane" icon="wonderStation.png" :unlocked="data['wonderPrecious0'].unlocked" :done="data['wonderPrecious0'].count > 0 && data['wonderEnergetic0'].count > 0 && data['wonderTechnological0'].count > 0 && data['wonderMeteorite0'].count > 0" doneText="done" />
-                        <sidenav-item id="floor1Pane" icon="floor1.png" :unlocked="data['wonderPrecious1'].unlocked || data['wonderEnergetic1'].unlocked || data['wonderTechnological1'].unlocked || data['wonderMeteorite1'].unlocked" :done="data['wonderPrecious1'].count > 0 && data['wonderEnergetic1'].count > 0 && data['wonderTechnological1'].count > 0 && data['wonderMeteorite1'].count > 0" doneText="done" />
-                        <sidenav-item id="floor2Pane" icon="floor2.png" :unlocked="data['wonderComm'].unlocked" :done="data['wonderComm'].count > 0 && data['wonderSpaceship'].count > 0 && data['wonderAntimatter'].count > 0 && data['wonderPortal'].count > 0" doneText="done" />
-                        <sidenav-item id="floor3Pane" icon="floor3.png" :unlocked="data['wonderStargate'].unlocked" :done="data['wonderStargate'].count > 0" doneText="done" />
+                    <sidenav-group id="tiandaoMijingHeading" :unlocked="data['mijingBaoshi0'].unlocked">
+                        <sidenav-item id="mijingStationPane" icon="mijingStation.png" :unlocked="data['mijingBaoshi0'].unlocked" :done="data['mijingBaoshi0'].count > 0 && data['mijingLingmu0'].count > 0 && data['mijingYunjin0'].count > 0 && data['mijingTiandao0'].count > 0" doneText="done" />
+                        <sidenav-item id="dongtianPane" icon="dongtian.png" :unlocked="data['mijingBaoshi1'].unlocked || data['mijingLingmu1'].unlocked || data['mijingYunjin1'].unlocked || data['mijingTiandao1'].unlocked" :done="data['mijingBaoshi1'].count > 0 && data['mijingLingmu1'].count > 0 && data['mijingYunjin1'].count > 0 && data['mijingTiandao1'].count > 0" doneText="done" />
+                        <sidenav-item id="xianfuPane" icon="xianfu.png" :unlocked="data['mijingChuansong'].unlocked" :done="data['mijingChuansong'].count > 0 && data['mijingFeizhou'].count > 0 && data['mijingFangun'].count > 0 && data['mijingChuansongMen'].count > 0" doneText="done" />
+                        <sidenav-item id="tiandiFazhenPane" icon="tiandiFazhen.png" :unlocked="data['mijingXingmen'].unlocked" :done="data['mijingXingmen'].count > 0" doneText="done" />
                     </sidenav-group>
 
-                    <sidenav-group id="solCenterHeading" :unlocked="data['techPlasma0'].unlocked">
-                        <sidenav-item id="solCenterPane" icon="solCenter.png" :unlocked="data['techPlasma0'].unlocked" :done="data['techPlasma0'].count > 0 && data['techEmc0'].count > 0 && data['techDyson0'].count > 0" doneText="done" />
-                        <sidenav-item id="emcPane" icon="emc.png" :unlocked="data['emc'].unlocked" />
-                        <sidenav-item id="dysonPane" icon="dyson.png" :unlocked="data['segment'].unlocked" />
+                    <sidenav-group id="zaohuaHeading" :unlocked="data['techYuanshen0'].unlocked">
+                        <sidenav-item id="zaohuaPane" icon="zaohua.png" :unlocked="data['techYuanshen0'].unlocked" :done="data['techYuanshen0'].count > 0 && data['techWuhua0'].count > 0 && data['techDafazhen0'].count > 0" doneText="done" />
+                        <sidenav-item id="wuhuaPane" icon="wuhua.png" :unlocked="data['wuhua'].unlocked" />
+                        <sidenav-item id="dafazhenPane" icon="dafazhen.png" :unlocked="data['lingzhenDuan'].unlocked" />
                     </sidenav-group>
 
-                    <sidenav-group id="interstellarHeading" :unlocked="data['radarT1'].unlocked || data['antimatter'].unlocked || data['spaceship'].unlocked || data['shipT1'].unlocked">
-                        <sidenav-item id="antimatterPane" icon="antimatter.png" :unlocked="data['antimatter'].unlocked" :prod="data['antimatter'].prod" :count="data['antimatter'].count" :storage="data['antimatter'].storage" />
-                        <sidenav-item id="communicationPane" icon="communication.png" :unlocked="data['radarT1'].unlocked" />
-                        <sidenav-item id="spaceshipPane" icon="spaceship.png" :unlocked="data['spaceship'].unlocked" :done="data['spaceship'].count > 0" doneText="built" />
-                        <sidenav-item id="militaryPane" icon="military.png" :unlocked="data['shipT1'].unlocked" />
-                        <sidenav-item id="interstellarCarnelianPane" icon="carnelian.png" :unlocked="data['spaceship'].count > 0" :opinion="data['carnelian'].opinion" />
-                        <sidenav-item id="interstellarPrasnianPane" icon="prasnian.png" :unlocked="data['spaceship'].count > 0" :opinion="data['prasnian'].opinion" />
-                        <sidenav-item id="interstellarHyacinitePane" icon="hyacinite.png" :unlocked="data['spaceship'].count > 0" :opinion="data['hyacinite'].opinion" />
-                        <sidenav-item id="interstellarKitrinosPane" icon="kitrinos.png" :unlocked="data['spaceship'].count > 0" :opinion="data['kitrinos'].opinion" />
-                        <sidenav-item id="interstellarMovitonPane" icon="moviton.png" :unlocked="data['spaceship'].count > 0" :opinion="data['moviton'].opinion" />
+                    <sidenav-group id="mijingTanxianHeading" :unlocked="data['lingyinT1'].unlocked || data['fangun'].unlocked || data['feizhou'].unlocked || data['diziT1'].unlocked">
+                        <sidenav-item id="fangunPane" icon="fangun.png" :unlocked="data['fangun'].unlocked" :prod="data['fangun'].prod" :count="data['fangun'].count" :storage="data['fangun'].storage" />
+                        <sidenav-item id="lingyinPane" icon="lingyin.png" :unlocked="data['lingyinT1'].unlocked" />
+                        <sidenav-item id="feizhouPane" icon="feizhou.png" :unlocked="data['feizhou'].unlocked" :done="data['feizhou'].count > 0" doneText="built" />
+                        <sidenav-item id="diziPane" icon="military.png" :unlocked="data['diziT1'].unlocked" />
+                        <sidenav-item id="chiyanMijingPane" icon="chiyan.png" :unlocked="data['feizhou'].count > 0" :opinion="data['chiyan'].opinion" />
+                        <sidenav-item id="biluoMijingPane" icon="biluo.png" :unlocked="data['feizhou'].count > 0" :opinion="data['biluo'].opinion" />
+                        <sidenav-item id="zixiaoMijingPane" icon="zixiao.png" :unlocked="data['feizhou'].count > 0" :opinion="data['zixiao'].opinion" />
+                        <sidenav-item id="jinguangMijingPane" icon="jinguang.png" :unlocked="data['feizhou'].count > 0" :opinion="data['jinguang'].opinion" />
+                        <sidenav-item id="xuanmingMijingPane" icon="xuanming.png" :unlocked="data['feizhou'].count > 0" :opinion="data['xuanming'].opinion" />
                     </sidenav-group>
 
-                    <sidenav-group id="stargazeHeading" :unlocked="data['darkmatter'].unlocked">
-                        <sidenav-item id="darkmatterPane" icon="darkmatter.png" :unlocked="data['darkmatter'].unlocked" :count="data['darkmatter'].count" :potential="getPotentialDM" />
-                        <sidenav-item id="stargazeCarnelianPane" icon="carnelian.png" :unlocked="data['darkmatter'].unlocked" :opinion="data['carnelian'].opinion" />
-                        <sidenav-item id="stargazePrasnianPane" icon="prasnian.png" :unlocked="data['darkmatter'].unlocked" :opinion="data['prasnian'].opinion" />
-                        <sidenav-item id="stargazeHyacinitePane" icon="hyacinite.png" :unlocked="data['darkmatter'].unlocked" :opinion="data['hyacinite'].opinion" />
-                        <sidenav-item id="stargazeKitrinosPane" icon="kitrinos.png" :unlocked="data['darkmatter'].unlocked" :opinion="data['kitrinos'].opinion" />
-                        <sidenav-item id="stargazeMovitonPane" icon="moviton.png" :unlocked="data['darkmatter'].unlocked" :opinion="data['moviton'].opinion" />
-                        <sidenav-item id="stargazeOverlordPane" icon="overlord.png" :unlocked="data['darkmatter'].unlocked" :opinion="data['overlord'].opinion" />
+                    <sidenav-group id="stargazeHeading" :unlocked="data['tiandaoLaw'].unlocked">
+                        <sidenav-item id="tiandaoLawPane" icon="tiandaoLaw.png" :unlocked="data['tiandaoLaw'].unlocked" :count="data['tiandaoLaw'].count" :potential="getPotentialDM" />
+                        <sidenav-item id="chiyanChuanchengPane" icon="chiyan.png" :unlocked="data['tiandaoLaw'].unlocked" :opinion="data['chiyan'].opinion" />
+                        <sidenav-item id="biluoChuanchengPane" icon="biluo.png" :unlocked="data['tiandaoLaw'].unlocked" :opinion="data['biluo'].opinion" />
+                        <sidenav-item id="zixiaoChuanchengPane" icon="zixiao.png" :unlocked="data['tiandaoLaw'].unlocked" :opinion="data['zixiao'].opinion" />
+                        <sidenav-item id="jinguangChuanchengPane" icon="jinguang.png" :unlocked="data['tiandaoLaw'].unlocked" :opinion="data['jinguang'].opinion" />
+                        <sidenav-item id="xuanmingChuanchengPane" icon="xuanming.png" :unlocked="data['tiandaoLaw'].unlocked" :opinion="data['xuanming'].opinion" />
+                        <sidenav-item id="tiandaoChuanchengPane" icon="tiandaoZhuZai.png" :unlocked="data['tiandaoLaw'].unlocked" :opinion="data['tiandaoZhuZai'].opinion" />
                     </sidenav-group>
                     
                 </div>
@@ -129,19 +129,19 @@
                         <div v-if="hasNotif" class="position-absolute top-0 end-0" style="line-height:1">
                             <i class="fas fa-fw fa-certificate text-success small"></i>
                         </div>
-                        <img :src="require('./assets/whiteLogo.png')" width="36" height="36" />
+                        <img :src="whiteLogo" width="36" height="36" />
                     </button>
                 </div>
                 
                 <div class="col-auto ms-auto">
                     <a href="https://discord.gg/3UkgeeT9CV" target="_blank" data-bs-toggle="tooltip" data-bs-placement="left" title="Discord">
-                        <img :src="require('./assets/interface/discord.png')" width="16" height="16" />
+                        <img :src="getIcon('discord.png')" width="16" height="16" />
                     </a>
                 </div>
                 
                 <div class="col-auto cursor-hover">
                     <button @click="setActivePane('donatingPane')">
-                        <img :src="require('./assets/interface/donating.png')" width="16" height="16" />
+                        <img :src="getIcon('donating.png')" width="16" height="16" />
                         <span class="ms-1 text-light">{{ $t('donatingPane') }}</span>
                     </button>
                 </div>
@@ -151,13 +151,13 @@
                         <div v-if="isNotif('achievementPane')" class="position-absolute top-0 end-0" style="line-height:1">
                             <i class="fas fa-fw fa-certificate text-success small"></i>
                         </div>
-                        <img :src="require('./assets/interface/trophy.png')" width="16" height="16" />
+                        <img :src="getIcon('trophy.png')" width="16" height="16" />
                     </button>
                 </div>
                 
                 <div class="col-auto cursor-hover position-relative" data-bs-toggle="tooltip" data-bs-placement="left" :title="$t('rankPane')">
                     <button @click="setActivePane('rankPane')">
-                        <img :src="require('./assets/interface/rank.png')" width="16" height="16" />
+                        <img :src="getIcon('rank.png')" width="16" height="16" />
                     </button>
                 </div>
                 
@@ -165,8 +165,15 @@
                     <button class="text-normal cursor-hover" data-bs-toggle="dropdown">
                         <span v-if="locale == 'en'" class="flag-icon flag-icon-gb rounded"></span>
                         <span v-if="locale == 'fr'" class="flag-icon flag-icon-fr rounded"></span>
+                        <span v-if="locale == 'zh'" class="flag-icon flag-icon-cn rounded"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <button class="dropdown-item cursor-hover" @click="changeLocale('zh')">
+                                <span class="flag-icon flag-icon-cn rounded me-2"></span>
+                                中文
+                            </button>
+                        </li>
                         <li>
                             <button class="dropdown-item cursor-hover" @click="changeLocale('en')">
                                 <span class="flag-icon flag-icon-gb rounded me-2"></span>
@@ -189,19 +196,19 @@
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <button class="dropdown-item cursor-hover" @click="setActivePane('helpPane')">
-                                <img :src="require('./assets/interface/help.png')" width="16" height="16" class="me-2">
+                                <img :src="getIcon('help.png')" width="16" height="16" class="me-2">
                                 {{ $t('helpPane') }}
                             </button>
                         </li>
                         <li>
                             <button class="dropdown-item cursor-hover" @click="setActivePane('settingsPane')">
-                                <img :src="require('./assets/interface/cog.png')" width="16" height="16" class="me-2">
+                                <img :src="getIcon('cog.png')" width="16" height="16" class="me-2">
                                 {{ $t('settingsPane') }}
                             </button>
                         </li>
                         <li>
                             <button class="dropdown-item cursor-hover" @click="setActivePane('aboutPane')">
-                                <img :src="require('./assets/interface/about.png')" width="16" height="16" class="me-2">
+                                <img :src="getIcon('about.png')" width="16" height="16" class="me-2">
                                 {{ $t('aboutPane') }}
                             </button>
                         </li>
@@ -220,344 +227,344 @@
                 <div class="tab-content" style="padding-bottom: 65px;">
                     
                     <!-- ENERGY PANE -->
-                    <pane id="energyPane" icon="energy.png" :descs="['energyPane_desc']">
-                        <resource id="energy" />
-                        <buildable id="energyT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="energyT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techEnergy2" />
-                        <buildable id="energyT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="venus" />
-                        <buildable id="energyT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderPrecious1" />
-                        <buildable id="energyT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderEnergetic1" />
-                        <buildable id="energyT6" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="jupiter" />
+                    <pane id="zhenqiPane" icon="zhenqi.png" :descs="['zhenqiPane_desc']">
+                        <resource id="zhenqi" />
+                        <buildable id="zhenqiT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="zhenqiT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techZhenqi2" />
+                        <buildable id="zhenqiT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="taibai" />
+                        <buildable id="zhenqiT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingBaoshi1" />
+                        <buildable id="zhenqiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingLingmu1" />
+                        <buildable id="zhenqiT6" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="suixing" />
                     </pane>
                     
                     <!-- BATTERY PANE -->
-                    <pane id="batteryPane" icon="battery.png" :descs="['batteryPane_desc']">
-                        <buildable id="energyS1" btnText="build" collapse="true" unlocker="techEnergyStorage1" />
-                        <buildable id="energyS2" btnText="build" collapse="true" unlocker="techEnergyStorage2" />
-                        <buildable id="energyS3" btnText="build" collapse="true" unlocker="techEnergyStorage3" />
-                        <buildable id="energyS4" btnText="build" collapse="true" unlocker="techEnergyStorage4" />
-                        <buildable id="energyS5" btnText="build" collapse="true" unlocker="techEnergyStorage5" />
-                        <buildable id="energyS6" btnText="build" collapse="true" unlocker="techEnergyStorage6" />
+                    <pane id="zhenqiCangPane" icon="zhenqiCang.png" :descs="['zhenqiCangPane_desc']">
+                        <buildable id="zhenqiS1" btnText="build" collapse="true" unlocker="techZhenqiCang1" />
+                        <buildable id="zhenqiS2" btnText="build" collapse="true" unlocker="techZhenqiCang2" />
+                        <buildable id="zhenqiS3" btnText="build" collapse="true" unlocker="techZhenqiCang3" />
+                        <buildable id="zhenqiS4" btnText="build" collapse="true" unlocker="techZhenqiCang4" />
+                        <buildable id="zhenqiS5" btnText="build" collapse="true" unlocker="techZhenqiCang5" />
+                        <buildable id="zhenqiS6" btnText="build" collapse="true" unlocker="techZhenqiCang6" />
                     </pane>
                     
                     <!-- PLASMA PANE -->
-                    <pane id="plasmaPane" icon="plasma.png" :descs="['plasmaPane_desc']">
-                        <resource id="plasma" />
-                        <buildable id="plasmaT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techPlasma1" />
-                        <buildable id="plasmaT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techPlasma2" />
-                        <buildable id="plasmaT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techPlasma3" />
-                        <buildable id="plasmaT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techPlasma4" />
-                        <buildable id="plasmaS1" btnText="build" collapse="true" unlocker="techPlasmaStorage1" />
-                        <buildable id="plasmaS2" btnText="build" collapse="true" unlocker="techPlasmaStorage2" />
-                        <buildable id="plasmaS3" btnText="build" collapse="true" unlocker="techPlasmaStorage3" />
+                    <pane id="yuanshenPane" icon="yuanshen.png" :descs="['yuanshenPane_desc']">
+                        <resource id="yuanshen" />
+                        <buildable id="yuanshenT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techYuanshen1" />
+                        <buildable id="yuanshenT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techYuanshen2" />
+                        <buildable id="yuanshenT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techYuanshen3" />
+                        <buildable id="yuanshenT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techYuanshen4" />
+                        <buildable id="yuanshenS1" btnText="build" collapse="true" unlocker="techYuanshenCang1" />
+                        <buildable id="yuanshenS2" btnText="build" collapse="true" unlocker="techYuanshenCang2" />
+                        <buildable id="yuanshenS3" btnText="build" collapse="true" unlocker="techYuanshenCang3" />
                     </pane>
                     
                     <!-- METEORITE PANE -->
-                    <pane id="meteoritePane" icon="meteorite.png" :descs="['meteoritePane_desc']">
-                        <resource id="meteorite" />
-                        <buildable id="meteoriteS1" btnText="upgrade" collapse="true" />
-                        <buildable id="meteoriteT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techMeteorite1" />
-                        <buildable id="meteoriteT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techMeteorite2" />
-                        <buildable id="meteoriteT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techMeteorite3" />
-                        <buildable id="meteoriteT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techMeteorite4" />
+                    <pane id="tiandaoPane" icon="tiandao.png" :descs="['tiandaoPane_desc']">
+                        <resource id="tiandao" />
+                        <buildable id="tiandaoS1" btnText="upgrade" collapse="true" />
+                        <buildable id="tiandaoT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTiandao1" />
+                        <buildable id="tiandaoT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTiandao2" />
+                        <buildable id="tiandaoT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTiandao3" />
+                        <buildable id="tiandaoT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTiandao4" />
                     </pane>
                     
                     <!-- CARBON PANE -->
-                    <pane id="carbonPane" icon="carbon.png" :descs="['carbonPane_desc']">
-                        <resource id="carbon" />
-                        <buildable id="carbonS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="carbonT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="carbonT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="carbonT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="carbonT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="carbonT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="xuantanPane" icon="xuantan.png" :descs="['xuantanPane_desc']">
+                        <resource id="xuantan" />
+                        <buildable id="xuantanS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="xuantanT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="xuantanT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="xuantanT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="xuantanT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="xuantanT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- OIL PANE -->
-                    <pane id="oilPane" icon="oil.png" :descs="['oilPane_desc']">
-                        <resource id="oil" />
-                        <buildable id="oilS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="oilT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="oilT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="oilT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="oilT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="oilT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="lingyePane" icon="lingye.png" :descs="['lingyePane_desc']">
+                        <resource id="lingye" />
+                        <buildable id="lingyeS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="lingyeT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="lingyeT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="lingyeT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="lingyeT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="lingyeT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- METAL PANE -->
-                    <pane id="metalPane" icon="metal.png" :descs="['metalPane_desc']">
-                        <resource id="metal" />
-                        <buildable id="metalS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="metalT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="metalT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="metalT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="metalT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="metalT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="lingstonePane" icon="lingstone.png" :descs="['lingstonePane_desc']">
+                        <resource id="lingstone" />
+                        <buildable id="lingstoneS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="lingstoneT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="lingstoneT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="lingstoneT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="lingstoneT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="lingstoneT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- GEM PANE -->
-                    <pane id="gemPane" icon="gem.png" :descs="['gemPane_desc']">
-                        <resource id="gem" />
-                        <buildable id="gemS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="gemT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="gemT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="gemT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="gemT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="gemT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="baoshiPane" icon="baoshi.png" :descs="['baoshiPane_desc']">
+                        <resource id="baoshi" />
+                        <buildable id="baoshiS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="baoshiT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="baoshiT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="baoshiT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="baoshiT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="baoshiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- WOOD PANE -->
-                    <pane id="woodPane" icon="wood.png" :descs="['woodPane_desc']">
-                        <resource id="wood" />
-                        <buildable id="woodS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="woodT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="woodT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="woodT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="woodT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="woodT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="lingmuPane" icon="lingmu.png" :descs="['lingmuPane_desc']">
+                        <resource id="lingmu" />
+                        <buildable id="lingmuS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="lingmuT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="lingmuT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="lingmuT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="lingmuT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="lingmuT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- SILICON PANE -->
-                    <pane id="siliconPane" icon="silicon.png" :descs="['siliconPane_desc']">
-                        <resource id="silicon" />
-                        <buildable id="siliconS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="siliconT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="siliconT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="siliconT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="siliconT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="siliconT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="yunjinPane" icon="yunjin.png" :descs="['yunjinPane_desc']">
+                        <resource id="yunjin" />
+                        <buildable id="yunjinS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="yunjinT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="yunjinT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="yunjinT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="yunjinT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="yunjinT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- URANIUM PANE -->
-                    <pane id="uraniumPane" icon="uranium.png" :descs="['uraniumPane_desc']">
-                        <resource id="uranium" />
-                        <buildable id="uraniumS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="uraniumT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="uraniumT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="uraniumT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="uraniumT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="uraniumT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="leilingPane" icon="leiling.png" :descs="['leilingPane_desc']">
+                        <resource id="leiling" />
+                        <buildable id="leilingS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="leilingT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="leilingT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="leilingT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="leilingT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="leilingT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- LAVA PANE -->
-                    <pane id="lavaPane" icon="lava.png" :descs="['lavaPane_desc']">
-                        <resource id="lava" />
-                        <buildable id="lavaS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="lavaT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="lavaT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="lavaT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="lavaT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="lavaT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="huoyanPane" icon="huoyan.png" :descs="['huoyanPane_desc']">
+                        <resource id="huoyan" />
+                        <buildable id="huoyanS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="huoyanT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="huoyanT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="huoyanT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="huoyanT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="huoyanT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- LUNARITE PANE -->
-                    <pane id="lunaritePane" icon="lunarite.png" :descs="['lunaritePane_desc']">
-                        <resource id="lunarite" />
-                        <buildable id="lunariteS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="lunariteT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="lunariteT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="lunariteT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="lunariteT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="lunariteT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="yueshiPane" icon="yueshi.png" :descs="['yueshiPane_desc']">
+                        <resource id="yueshi" />
+                        <buildable id="yueshiS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="yueshiT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="yueshiT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="yueshiT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="yueshiT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="yueshiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- METHANE PANE -->
-                    <pane id="methanePane" icon="methane.png" :descs="['methanePane_desc']">
-                        <resource id="methane" />
-                        <buildable id="methaneS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="methaneT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="methaneT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="methaneT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="methaneT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="methaneT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="miasmaPane" icon="miasma.png" :descs="['miasmaPane_desc']">
+                        <resource id="miasma" />
+                        <buildable id="miasmaS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="miasmaT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="miasmaT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="miasmaT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="miasmaT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="miasmaT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- TITANIUM PANE -->
-                    <pane id="titaniumPane" icon="titanium.png" :descs="['titaniumPane_desc']">
-                        <resource id="titanium" />
-                        <buildable id="titaniumS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="titaniumT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="titaniumT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="titaniumT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="titaniumT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="titaniumT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="xuangangPane" icon="xuangang.png" :descs="['xuangangPane_desc']">
+                        <resource id="xuangang" />
+                        <buildable id="xuangangS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="xuangangT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="xuangangT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="xuangangT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="xuangangT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="xuangangT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- GOLD PANE -->
-                    <pane id="goldPane" icon="gold.png" :descs="['goldPane_desc']">
-                        <resource id="gold" />
-                        <buildable id="goldS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="goldT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="goldT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="goldT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="goldT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="goldT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="jinshaPane" icon="jinsha.png" :descs="['jinshaPane_desc']">
+                        <resource id="jinsha" />
+                        <buildable id="jinshaS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="jinshaT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="jinshaT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="jinshaT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="jinshaT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="jinshaT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- SILVER PANE -->
-                    <pane id="silverPane" icon="silver.png" :descs="['silverPane_desc']">
-                        <resource id="silver" />
-                        <buildable id="silverS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="silverT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="silverT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="silverT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="silverT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="silverT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="yinshaPane" icon="yinsha.png" :descs="['yinshaPane_desc']">
+                        <resource id="yinsha" />
+                        <buildable id="yinshaS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="yinshaT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="yinshaT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="yinshaT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="yinshaT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="yinshaT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- HYDROGEN PANE -->
-                    <pane id="hydrogenPane" icon="hydrogen.png" :descs="['hydrogenPane_desc']">
-                        <resource id="hydrogen" />
-                        <buildable id="hydrogenS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="hydrogenT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="hydrogenT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="hydrogenT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="hydrogenT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="hydrogenT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="qingqiPane" icon="qingqi.png" :descs="['qingqiPane_desc']">
+                        <resource id="qingqi" />
+                        <buildable id="qingqiS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="qingqiT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="qingqiT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="qingqiT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="qingqiT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="qingqiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- HELIUM PANE -->
-                    <pane id="heliumPane" icon="helium.png" :descs="['heliumPane_desc']">
-                        <resource id="helium" />
-                        <buildable id="heliumS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="heliumT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="heliumT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="heliumT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="heliumT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="heliumT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="taiyiPane" icon="taiyi.png" :descs="['taiyiPane_desc']">
+                        <resource id="taiyi" />
+                        <buildable id="taiyiS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="taiyiT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="taiyiT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="taiyiT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="taiyiT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="taiyiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- ICE PANE -->
-                    <pane id="icePane" icon="ice.png" :descs="['icePane_desc']">
-                        <resource id="ice" />
-                        <buildable id="iceS1" btnText="upgrade" collapse="true" unlocker="techStorage" />
-                        <buildable id="iceT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="iceT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier2" />
-                        <buildable id="iceT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderTechnological1" />
-                        <buildable id="iceT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="wonderMeteorite1" />
-                        <buildable id="iceT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
+                    <pane id="hanbingPane" icon="hanbing.png" :descs="['hanbingPane_desc']">
+                        <resource id="hanbing" />
+                        <buildable id="hanbingS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
+                        <buildable id="hanbingT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="hanbingT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techJinglian" />
+                        <buildable id="hanbingT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingYunjin1" />
+                        <buildable id="hanbingT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="mijingTiandao1" />
+                        <buildable id="hanbingT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
                     <!-- SCIENCE PANE -->
-                    <pane id="sciencePane" icon="science.png" :descs="['sciencePane_desc']">
-                        <buildable id="scienceT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="scienceT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techScience2" />
-                        <buildable id="scienceT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techScience3" />
-                        <buildable id="scienceT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techScience4" />
-                        <buildable id="scienceT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techScience5" />
+                    <pane id="wudaoPane" icon="wudao.png" :descs="['wudaoPane_desc']">
+                        <buildable id="wudaoT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="wudaoT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techWudao2" />
+                        <buildable id="wudaoT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techWudao3" />
+                        <buildable id="wudaoT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techWudao4" />
+                        <buildable id="wudaoT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techWudao5" />
                     </pane>
                     
                     <!-- TECHNOLOGIES PANE -->
-                    <pane id="technologiesPane" icon="technologies.png" :descs="['technologiesPane_desc']">
-                        <buildable id="techStorage" btnText="unlock" />
-                        <buildable id="techEnergy1" btnText="unlock" />
-                        <buildable id="techOil" btnText="unlock" unlocker="techStorage" />
-                        <buildable id="techEnergy2" btnText="unlock" unlocker="techEnergy1" />
-                        <buildable id="techTier2" btnText="unlock" unlocker="techEnergy1" />
-                        <buildable id="techDestruction" btnText="unlock" unlocker="techTier2" />
-                        <buildable id="techFuel1" btnText="unlock" unlocker="techTier2" />
-                        <buildable id="techFuel2" btnText="unlock" unlocker="techFuel1" />
-                        <buildable id="techFuel3" btnText="unlock" unlocker="techFuel2" />
-                        <buildable id="techScience2" btnText="unlock" unlocker="techFuel1" />
-                        <buildable id="techScience3" btnText="unlock" unlocker="techScience2" />
-                        <buildable id="techScience4" btnText="unlock" unlocker="techScience3" />
-                        <buildable id="techEnergyStorage1" btnText="unlock" unlocker="upgradeEnergy2" />
-                        <buildable id="techEnergyStorage2" btnText="unlock" unlocker="techEnergyStorage1" />
-                        <buildable id="techEnergyStorage3" btnText="unlock" unlocker="techEnergyStorage2" />
-                        <buildable id="techEnergyStorage4" btnText="unlock" unlocker="techEnergyStorage4" />
-                        <buildable id="techPlasma1" btnText="unlock" unlocker="techPlasma0" />
-                        <buildable id="techPlasma2" btnText="unlock" unlocker="techPlasma1" />
-                        <buildable id="techPlasmaStorage1" btnText="unlock" unlocker="techPlasma1" />
-                        <buildable id="techPlasmaStorage2" btnText="unlock" unlocker="techPlasmaStorage1" />
-                        <buildable id="techEmc1" btnText="unlock" unlocker="techEmc0" />
-                        <buildable id="techMeteorite0" btnText="unlock" unlocker="techEmc1" />
-                        <buildable id="techMeteorite1" btnText="unlock" unlocker="wonderMeteorite1" />
-                        <buildable id="techMeteorite2" btnText="unlock" unlocker="techMeteorite1" />
-                        <buildable id="techDyson1" btnText="unlock" unlocker="techDyson0" />
-                        <buildable id="techDyson2" btnText="unlock" unlocker="techDyson1" />
-                        <buildable id="techNanoswarm1" btnText="unlock" unlocker="techNanoswarm0" />
-                        <buildable id="upgradeTier2" btnText="upgrade" unlocker="techTier2" />
-                        <buildable id="upgradeEnergy1" btnText="upgrade" unlocker="techEnergy1" />
-                        <buildable id="upgradeEnergy2" btnText="upgrade" unlocker="techEnergy2" />
-                        <buildable id="boostProduction" btnText="boost" />
-                        <buildable id="boostScience" btnText="boost" />
-                        <buildable id="boostEnergy" btnText="boost" />
-                        <buildable id="boostEnergyStorage" btnText="boost" />
+                    <pane id="gongfaPane" icon="gongfa.png" :descs="['gongfaPane_desc']">
+                        <buildable id="techCangku" btnText="unlock" />
+                        <buildable id="techZhenqi1" btnText="unlock" />
+                        <buildable id="techLingye" btnText="unlock" unlocker="techCangku" />
+                        <buildable id="techZhenqi2" btnText="unlock" unlocker="techZhenqi1" />
+                        <buildable id="techJinglian" btnText="unlock" unlocker="techZhenqi1" />
+                        <buildable id="techSuimie" btnText="unlock" unlocker="techJinglian" />
+                        <buildable id="techLingmai1" btnText="unlock" unlocker="techJinglian" />
+                        <buildable id="techLingmai2" btnText="unlock" unlocker="techLingmai1" />
+                        <buildable id="techLingmai3" btnText="unlock" unlocker="techLingmai2" />
+                        <buildable id="techWudao2" btnText="unlock" unlocker="techLingmai1" />
+                        <buildable id="techWudao3" btnText="unlock" unlocker="techWudao2" />
+                        <buildable id="techWudao4" btnText="unlock" unlocker="techWudao3" />
+                        <buildable id="techZhenqiCang1" btnText="unlock" unlocker="upgradeZhenqi2" />
+                        <buildable id="techZhenqiCang2" btnText="unlock" unlocker="techZhenqiCang1" />
+                        <buildable id="techZhenqiCang3" btnText="unlock" unlocker="techZhenqiCang2" />
+                        <buildable id="techZhenqiCang4" btnText="unlock" unlocker="techZhenqiCang4" />
+                        <buildable id="techYuanshen1" btnText="unlock" unlocker="techYuanshen0" />
+                        <buildable id="techYuanshen2" btnText="unlock" unlocker="techYuanshen1" />
+                        <buildable id="techYuanshenCang1" btnText="unlock" unlocker="techYuanshen1" />
+                        <buildable id="techYuanshenCang2" btnText="unlock" unlocker="techYuanshenCang1" />
+                        <buildable id="techWuhua1" btnText="unlock" unlocker="techWuhua0" />
+                        <buildable id="techTiandao0" btnText="unlock" unlocker="techWuhua1" />
+                        <buildable id="techTiandao1" btnText="unlock" unlocker="mijingTiandao1" />
+                        <buildable id="techTiandao2" btnText="unlock" unlocker="techTiandao1" />
+                        <buildable id="techDafazhen1" btnText="unlock" unlocker="techDafazhen0" />
+                        <buildable id="techDafazhen2" btnText="unlock" unlocker="techDafazhen1" />
+                        <buildable id="techChongqun1" btnText="unlock" unlocker="techChongqun0" />
+                        <buildable id="upgradeJinglian" btnText="upgrade" unlocker="techJinglian" />
+                        <buildable id="upgradeZhenqi1" btnText="upgrade" unlocker="techZhenqi1" />
+                        <buildable id="upgradeZhenqi2" btnText="upgrade" unlocker="techZhenqi2" />
+                        <buildable id="boostChanwu" btnText="boost" />
+                        <buildable id="boostWudao" btnText="boost" />
+                        <buildable id="boostZhenqi" btnText="boost" />
+                        <buildable id="boostZhenqiCang" btnText="boost" />
                     </pane>
                     
                     <!-- FUEL PANE -->
-                    <pane id="fuelPane" icon="fuel.png" :descs="['fuelPane_desc']">
-                        <resource id="fuel" />
-                        <buildable id="fuelT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
-                        <buildable id="fuelT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techFuel2" />
-                        <buildable id="fuelT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techFuel3" />
+                    <pane id="lingmaiPane" icon="lingmai.png" :descs="['lingmaiPane_desc']">
+                        <resource id="lingmai" />
+                        <buildable id="lingmaiT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
+                        <buildable id="lingmaiT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techLingmai2" />
+                        <buildable id="lingmaiT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techLingmai3" />
                     </pane>
                     
                     <!-- ROCKET PANE -->
-                    <pane id="rocketPane" icon="rocket.png" :descs="['rocketPane_desc']">
-                        <buildable id="rocket1" btnText="build" />
-                        <buildable id="rocket2" btnText="launch" unlocker="rocket1" />
+                    <pane id="mijingRukouPane" icon="mijingRukou.png" :descs="['mijingRukouPane_desc']">
+                        <buildable id="mijingRukou1" btnText="build" />
+                        <buildable id="mijingRukou2" btnText="launch" unlocker="mijingRukou1" />
                     </pane>
                     
                     <!-- INNER SOLAR SYSTEM PANE -->
-                    <pane id="innerSolarSystemPane" icon="innerSolarSystem.png">
-                        <buildable id="moon" btnText="explore" />
-                        <buildable id="mercury" btnText="explore" />
-                        <buildable id="venus" btnText="explore" />
-                        <buildable id="mars" btnText="explore" />
-                        <buildable id="asteroid" btnText="explore" />
-                        <buildable id="wonderStation" btnText="explore" unlocker="asteroid" />
+                    <pane id="fanjieMijingPane" icon="fanjieMijing.png">
+                        <buildable id="yuejing" btnText="explore" />
+                        <buildable id="chenxing" btnText="explore" />
+                        <buildable id="taibai" btnText="explore" />
+                        <buildable id="yinghuo" btnText="explore" />
+                        <buildable id="xingchen" btnText="explore" />
+                        <buildable id="mijingStation" btnText="explore" unlocker="xingchen" />
                     </pane>
 
                     <!-- OUTER SOLAR SYSTEM PANE -->
-                    <pane id="outerSolarSystemPane" icon="outerSolarSystem.png">
-                        <buildable id="jupiter" btnText="explore" />
-                        <buildable id="saturn" btnText="explore" />
-                        <buildable id="uranus" btnText="explore" />
-                        <buildable id="neptune" btnText="explore" />
-                        <buildable id="pluto" btnText="explore" />
-                        <buildable id="solCenter0" btnText="explore" unlocker="pluto" />
-                        <buildable id="solCenter1" btnText="explore" unlocker="solCenter0" />
+                    <pane id="xianyuMijingPane" icon="xianyuMijing.png">
+                        <buildable id="suixing" btnText="explore" />
+                        <buildable id="zhenxing" btnText="explore" />
+                        <buildable id="tianwang" btnText="explore" />
+                        <buildable id="haiwang" btnText="explore" />
+                        <buildable id="mingxing" btnText="explore" />
+                        <buildable id="zaohuaRukou0" btnText="explore" unlocker="mingxing" />
+                        <buildable id="zaohuaRukou1" btnText="explore" unlocker="zaohuaRukou0" />
                     </pane>
 
                     <!-- WONDER STATION PANE -->
-                    <pane id="wonderStationPane" icon="wonderStation.png" :descs="['wonderStationPane_desc']">
-                        <buildable id="wonderPrecious0" btnText="build" />
-                        <buildable id="wonderEnergetic0" btnText="build" />
-                        <buildable id="wonderTechnological0" btnText="build" />
-                        <buildable id="wonderMeteorite0" btnText="build" />
+                    <pane id="mijingStationPane" icon="mijingStation.png" :descs="['mijingStationPane_desc']">
+                        <buildable id="mijingBaoshi0" btnText="build" />
+                        <buildable id="mijingLingmu0" btnText="build" />
+                        <buildable id="mijingYunjin0" btnText="build" />
+                        <buildable id="mijingTiandao0" btnText="build" />
                     </pane>
 
                     <!-- FLOOR #1 PANE -->
-                    <pane id="floor1Pane" icon="floor1.png">
-                        <buildable id="wonderPrecious1" btnText="activate" />
-                        <buildable id="wonderEnergetic1" btnText="activate" />
-                        <buildable id="wonderTechnological1" btnText="activate" />
-                        <buildable id="wonderMeteorite1" btnText="activate" />
+                    <pane id="dongtianPane" icon="dongtian.png">
+                        <buildable id="mijingBaoshi1" btnText="activate" />
+                        <buildable id="mijingLingmu1" btnText="activate" />
+                        <buildable id="mijingYunjin1" btnText="activate" />
+                        <buildable id="mijingTiandao1" btnText="activate" />
                     </pane>
 
                     <!-- FLOOR #2 PANE -->
-                    <pane id="floor2Pane" icon="floor2.png">
-                        <buildable id="wonderComm" btnText="activate" />
-                        <buildable id="wonderSpaceship" btnText="activate" />
-                        <buildable id="wonderAntimatter" btnText="activate" />
-                        <buildable id="wonderPortal" btnText="activate" />
+                    <pane id="xianfuPane" icon="xianfu.png">
+                        <buildable id="mijingChuansong" btnText="activate" />
+                        <buildable id="mijingFeizhou" btnText="activate" />
+                        <buildable id="mijingFangun" btnText="activate" />
+                        <buildable id="mijingChuansongMen" btnText="activate" />
                     </pane>
 
                     <!-- FLOOR #3 PANE -->
-                    <pane id="floor3Pane" icon="floor3.png">
-                        <buildable id="wonderStargate" btnText="activate" />
+                    <pane id="tiandiFazhenPane" icon="tiandiFazhen.png">
+                        <buildable id="mijingXingmen" btnText="activate" />
                     </pane>
                     
                     <!-- SOL CENTER PANE -->
-                    <pane id="solCenterPane" icon="solCenter.png">
-                        <buildable id="techPlasma0" btnText="unlock" />
-                        <buildable id="techEmc0" btnText="unlock" />
-                        <buildable id="techDyson0" btnText="unlock" />
+                    <pane id="zaohuaPane" icon="zaohua.png">
+                        <buildable id="techYuanshen0" btnText="unlock" />
+                        <buildable id="techWuhua0" btnText="unlock" />
+                        <buildable id="techDafazhen0" btnText="unlock" />
                     </pane>
                     
                     <!-- EMC PANE -->
-                    <pane id="emcPane" icon="emc.png" :descs="['emcPane_desc']">
+                    <pane id="wuhuaPane" icon="wuhua.png" :descs="['wuhuaPane_desc']">
                         <card checked="true">
                             <div class="col-12">
                                 <div class="row gx-3">
@@ -573,7 +580,7 @@
                                             <option value="100000">{{ numeralFormat(100000, '0a') }}</option>
                                         </select>
                                     </div>
-                                    <div v-if="data['autoEmc'].count > 0" class="col">
+                                    <div v-if="data['autoWuhua'].count > 0" class="col">
                                         <div class="small">{{ $t('selectAutoEmcInterval') }}</div>
                                         <select class="form-control" v-model="selectedAutoEmcInterval" @change="setAutoEmcInterval(selectedAutoEmcInterval)">
                                             <option value="1">{{ $t('1second') }}</option>
@@ -587,67 +594,67 @@
                         <card checked="true">
                             <div class="col-12">
                                 <div class="row g-1">
-                                    <emc id="emcMeteorite" />
-                                    <emc id="emcCarbon" />
-                                    <emc id="emcOil" />
-                                    <emc id="emcMetal" />
-                                    <emc id="emcGem" />
-                                    <emc id="emcWood" />
-                                    <emc id="emcSilicon" />
-                                    <emc id="emcUranium" />
-                                    <emc id="emcLava" />
-                                    <emc id="emcLunarite" />
-                                    <emc id="emcMethane" />
-                                    <emc id="emcTitanium" />
-                                    <emc id="emcGold" />
-                                    <emc id="emcSilver" />
-                                    <emc id="emcHydrogen" />
-                                    <emc id="emcHelium" />
-                                    <emc id="emcIce" />
+                                    <wuhua id="wuhuaTiandao" />
+                                    <wuhua id="wuhuaXuantan" />
+                                    <wuhua id="wuhuaLingye" />
+                                    <wuhua id="wuhuaLingstone" />
+                                    <wuhua id="wuhuaBaoshi" />
+                                    <wuhua id="wuhuaLingmu" />
+                                    <wuhua id="wuhuaYunjin" />
+                                    <wuhua id="wuhuaLeiling" />
+                                    <wuhua id="wuhuaHuoyan" />
+                                    <wuhua id="wuhuaYueshi" />
+                                    <wuhua id="wuhuaMiasma" />
+                                    <wuhua id="wuhuaXuangang" />
+                                    <wuhua id="wuhuaJinsha" />
+                                    <wuhua id="wuhuaYinsha" />
+                                    <wuhua id="wuhuaQingqi" />
+                                    <wuhua id="wuhuaTaiyi" />
+                                    <wuhua id="wuhuaHanbing" />
                                 </div>
                             </div>
                         </card>
                     </pane>
                     
                     <!-- DYSON PANE -->
-                    <pane id="dysonPane" icon="dyson.png" :descs="['dysonPane_desc']">
-                        <buildable id="segment" btnText="build" />
-                        <buildable id="dysonT1" btnText="build" />
-                        <buildable id="dysonT2" btnText="build" />
-                        <buildable id="dysonT3" btnText="build" />
+                    <pane id="dafazhenPane" icon="dafazhen.png" :descs="['dafazhenPane_desc']">
+                        <buildable id="lingzhenDuan" btnText="build" />
+                        <buildable id="dafazhenT1" btnText="build" />
+                        <buildable id="dafazhenT2" btnText="build" />
+                        <buildable id="dafazhenT3" btnText="build" />
                     </pane>
                     
                     <!-- ANTIMATTER PANE -->
-                    <pane id="antimatterPane" icon="antimatter.png" :descs="['antimatterPane_desc']">
-                        <buildable id="antimatterT1" btnText="build" />
+                    <pane id="fangunPane" icon="fangun.png" :descs="['fangunPane_desc']">
+                        <buildable id="fangunT1" btnText="build" />
                     </pane>
                     
                     <!-- COMMUNICATION PANE -->
-                    <pane id="communicationPane" icon="communication.png" :descs="['communicationPane_desc']">
-                        <buildable id="radarT1" btnText="build" />
-                        <buildable id="radarT2" btnText="build" />
+                    <pane id="lingyinPane" icon="lingyin.png" :descs="['lingyinPane_desc']">
+                        <buildable id="lingyinT1" btnText="build" />
+                        <buildable id="lingyinT2" btnText="build" />
                     </pane>
                     
                     <!-- SPACESHIP PANE -->
-                    <pane id="spaceshipPane" icon="spaceship.png" :descs="['spaceshipPane_desc']">
-                        <buildable id="spaceship" btnText="build" />
-                        <buildable id="shield" btnText="build" />
-                        <buildable id="engine" btnText="build" />
-                        <buildable id="aero" btnText="build" />
+                    <pane id="feizhouPane" icon="feizhou.png" :descs="['feizhouPane_desc']">
+                        <buildable id="feizhou" btnText="build" />
+                        <buildable id="huti" btnText="build" />
+                        <buildable id="dunfa" btnText="build" />
+                        <buildable id="lingyi" btnText="build" />
                     </pane>
                     
                     <!-- MILITARY PANE -->
-                    <pane id="militaryPane" icon="military.png">
+                    <pane id="diziPane" icon="military.png">
                         <fleet id="fleet" />
-                        <buildable id="shipT1" btnText="build" />
-                        <buildable id="shipT2" btnText="build" />
-                        <buildable id="shipT3" btnText="build" />
-                        <buildable id="shipT4" btnText="build" />
-                        <buildable id="shipT5" btnText="build" />
+                        <buildable id="diziT1" btnText="build" />
+                        <buildable id="diziT2" btnText="build" />
+                        <buildable id="diziT3" btnText="build" />
+                        <buildable id="diziT4" btnText="build" />
+                        <buildable id="diziT5" btnText="build" />
                     </pane>
                     
                     <!-- INTERSTELLAR CARNELIAN PANE -->
-                    <pane id="interstellarCarnelianPane" icon="carnelian.png" :descs="['interstellarCarnelianPane_desc']">
+                    <pane id="chiyanMijingPane" icon="chiyan.png" :descs="['chiyanMijingPane_desc']">
                         <star id="star301"    /> <star id="star163901" /> <star id="star181901" /> <star id="star151801" /> <star id="star25401"  /> <star id="star146301" />
                         <star id="star122601" /> <star id="star79501"  /> <star id="star1501"   /> <star id="star79901"  /> <star id="star37601"  /> <star id="star123401" />
                         <star id="star164301" /> <star id="star219102" /> <star id="star204702" /> <star id="star116901" /> <star id="star74001"  /> <star id="star205102" />
@@ -657,7 +664,7 @@
                     </pane>
                     
                     <!-- INTERSTELLAR PRASNIAN PANE -->
-                    <pane id="interstellarPrasnianPane" icon="prasnian.png" :descs="['interstellarPrasnianPane_desc']">
+                    <pane id="biluoMijingPane" icon="biluo.png" :descs="['biluoMijingPane_desc']">
                         <star id="star401"    /> <star id="star25101"  /> <star id="star207601" /> <star id="star223901" /> <star id="star121101" /> <star id="star136701" />
                         <star id="star166402" /> <star id="star95001"  /> <star id="star175902" /> <star id="star56501"  /> <star id="star167801" /> <star id="star103201" />
                         <star id="star113301" /> <star id="star199602" /> <star id="star157201" /> <star id="star222201" /> <star id="star6301"   /> <star id="star214301" />
@@ -667,7 +674,7 @@
                     </pane>
                     
                     <!-- INTERSTELLAR HYACINITE PANE -->
-                    <pane id="interstellarHyacinitePane" icon="hyacinite.png" :descs="['interstellarHyacinitePane_desc']">
+                    <pane id="zixiaoMijingPane" icon="zixiao.png" :descs="['zixiaoMijingPane_desc']">
                         <star id="star201"    /> <star id="star217101" /> <star id="star166701" /> <star id="star179501" /> <star id="star6501"   /> <star id="star222401" />
                         <star id="star200001" /> <star id="star24201"  /> <star id="star224202" /> <star id="star92801"  /> <star id="star172701" /> <star id="star86401"  />
                         <star id="star202902" /> <star id="star177001" /> <star id="star68301"  /> <star id="star205001" /> <star id="star13401"  /> <star id="star34201"  />
@@ -676,7 +683,7 @@
                     </pane>
                     
                     <!-- INTERSTELLAR KITRINOS PANE -->
-                    <pane id="interstellarKitrinosPane" icon="kitrinos.png" :descs="['interstellarKitrinosPane_desc']">
+                    <pane id="jinguangMijingPane" icon="jinguang.png" :descs="['jinguangMijingPane_desc']">
                         <star id="star501"    /> <star id="star130601" /> <star id="star158101" /> <star id="star224601" /> <star id="star58601"  /> <star id="star10101"  />
                         <star id="star194201" /> <star id="star1101"   /> <star id="star72501"  /> <star id="star210501" /> <star id="star189701" /> <star id="star175601" />
                         <star id="star206902" /> <star id="star133601" /> <star id="star135801" /> <star id="star39101"  /> <star id="star107001" /> <star id="star105801" />
@@ -686,7 +693,7 @@
                     </pane>
                     
                     <!-- INTERSTELLAR MOVITON PANE -->
-                    <pane id="interstellarMovitonPane" icon="moviton.png" :descs="['interstellarMovitonPane_desc']">
+                    <pane id="xuanmingMijingPane" icon="xuanming.png" :descs="['xuanmingMijingPane_desc']">
                         <star id="star701"    /> <star id="star601"    /> <star id="star80101"  /> <star id="star213301" /> <star id="star13601"  /> <star id="star51801"  />
                         <star id="star35801"  /> <star id="star216801" /> <star id="star224101" /> <star id="star114001" /> <star id="star15301"  /> <star id="star69601"  />
                         <star id="star148501" /> <star id="star155801" /> <star id="star185101" /> <star id="star175901" /> <star id="star203902" /> <star id="star204801" />
@@ -698,8 +705,8 @@
                     </pane>
                     
                     <!-- DARKMATTER PANE -->
-                    <pane id="darkmatterPane" icon="darkmatter.png" :descs="['darkmatterPane_desc1', 'darkmatterPane_desc2', 'darkmatterPane_desc3', 'darkmatterPane_desc4', 'darkmatterPane_desc5']">
-                        <card id="darkmatter" :descs="['darkmatter_desc']">
+                    <pane id="tiandaoLawPane" icon="tiandaoLaw.png" :descs="['tiandaoLawPane_desc1', 'tiandaoLawPane_desc2', 'tiandaoLawPane_desc3', 'tiandaoLawPane_desc4', 'tiandaoLawPane_desc5']">
+                        <card id="tiandaoLaw" :descs="['tiandaoLaw_desc']">
                             <div class="col-12">
                                 <div class="heading-6">{{ $t('dmWonders') }} <span class="text-light">{{ getDMWonders }}</span></div>
                                 <div class="small"><span>{{ $t('dmWonders_desc') }}</span></div>
@@ -733,54 +740,54 @@
                     </pane>
                     
                     <!-- STARGAZE CARNELIAN PANE -->
-                    <pane id="stargazeCarnelianPane" icon="carnelian.png" :descs="['stargazeCarnelianPane_desc']">
-                        <buildable id="upgradeGain" btnText="activate" />
-                        <buildable id="upgradeStorage1" btnText="activate" />
-                        <buildable id="upgradeStorage2" btnText="activate" />
-                        <buildable id="techEnergyStorage6" btnText="activate" />
-                        <buildable id="upgradeStorage3" btnText="activate" />
+                    <pane id="chiyanChuanchengPane" icon="chiyan.png" :descs="['chiyanChuanchengPane_desc']">
+                        <buildable id="upgradeLingqu" btnText="activate" />
+                        <buildable id="upgradeCangku1" btnText="activate" />
+                        <buildable id="upgradeCangku2" btnText="activate" />
+                        <buildable id="techZhenqiCang6" btnText="activate" />
+                        <buildable id="upgradeCangku3" btnText="activate" />
                     </pane>
                     
                     <!-- STARGAZE PRASNIAN PANE -->
-                    <pane id="stargazePrasnianPane" icon="prasnian.png" :descs="['stargazePrasnianPane_desc']">
-                        <buildable id="techPlasma3" btnText="activate" />
-                        <buildable id="upgradeWonder1" btnText="activate" />
-                        <buildable id="techPlasmaStorage3" btnText="activate" />
-                        <buildable id="upgradeWonder2" btnText="activate" />
-                        <buildable id="upgradeWonder3" btnText="activate" />
-                        <buildable id="autoEmc" btnText="activate" />
-                        <buildable id="techPlasma4" btnText="activate" />
+                    <pane id="biluoChuanchengPane" icon="biluo.png" :descs="['biluoChuanchengPane_desc']">
+                        <buildable id="techYuanshen3" btnText="activate" />
+                        <buildable id="upgradeMijing1" btnText="activate" />
+                        <buildable id="techYuanshenCang3" btnText="activate" />
+                        <buildable id="upgradeMijing2" btnText="activate" />
+                        <buildable id="upgradeMijing3" btnText="activate" />
+                        <buildable id="autoWuhua" btnText="activate" />
+                        <buildable id="techYuanshen4" btnText="activate" />
                     </pane>
                     
                     <!-- STARGAZE HYACINITE PANE -->
-                    <pane id="stargazeHyacinitePane" icon="hyacinite.png" :descs="['stargazeHyacinitePane_desc']">
-                        <buildable id="upgradeScience1" btnText="activate" />
-                        <buildable id="upgradeScience2" btnText="activate" />
-                        <buildable id="techScience5" btnText="activate" />
-                        <buildable id="upgradeEnergyBoost" btnText="activate" />
+                    <pane id="zixiaoChuanchengPane" icon="zixiao.png" :descs="['zixiaoChuanchengPane_desc']">
+                        <buildable id="upgradeWudao1" btnText="activate" />
+                        <buildable id="upgradeWudao2" btnText="activate" />
+                        <buildable id="techWudao5" btnText="activate" />
+                        <buildable id="upgradeZhenqiBoost" btnText="activate" />
                     </pane>
                     
                     <!-- STARGAZE KITRINOS PANE -->
-                    <pane id="stargazeKitrinosPane" icon="kitrinos.png" :descs="['stargazeKitrinosPane_desc']">
+                    <pane id="jinguangChuanchengPane" icon="jinguang.png" :descs="['jinguangChuanchengPane_desc']">
                         <buildable id="upgradeTier1" btnText="activate" />
-                        <buildable id="techEnergyStorage5" btnText="activate" />
+                        <buildable id="techZhenqiCang5" btnText="activate" />
                         <buildable id="multiBuy" btnText="activate" />
-                        <buildable id="boostCapital" btnText="activate" />
+                        <buildable id="boostLingyun" btnText="activate" />
                         <buildable id="techTier5" btnText="activate" />
                     </pane>
                     
                     <!-- STARGAZE MOVITON PANE -->
-                    <pane id="stargazeMovitonPane" icon="moviton.png" :descs="['stargazeMovitonPane_desc']">
-                        <buildable id="upgradeFuel1" btnText="activate" />
-                        <buildable id="upgradeSpaceship" btnText="activate" />
-                        <buildable id="techMeteorite3" btnText="activate" />
-                        <buildable id="techMeteorite4" btnText="activate" />
+                    <pane id="xuanmingChuanchengPane" icon="xuanming.png" :descs="['xuanmingChuanchengPane_desc']">
+                        <buildable id="upgradeLingmai1" btnText="activate" />
+                        <buildable id="upgradeDizi" btnText="activate" />
+                        <buildable id="techTiandao3" btnText="activate" />
+                        <buildable id="techTiandao4" btnText="activate" />
                     </pane>
                     
                     <!-- STARGAZE OVERLORD PANE -->
-                    <pane id="stargazeOverlordPane" icon="overlord.png" :descs="['stargazeOverlordPane_desc']">
-                        <buildable id="boostDarkmatter" btnText="activate" />
-                        <buildable id="upgradeFaction" btnText="activate" />
+                    <pane id="tiandaoChuanchengPane" icon="tiandaoZhuZai.png" :descs="['tiandaoChuanchengPane_desc']">
+                        <buildable id="boostTiandaoLaw" btnText="activate" />
+                        <buildable id="upgradeZongmen" btnText="activate" />
                     </pane>
                         
                     <!-- DONATING PANE -->
@@ -796,7 +803,7 @@
                                     <div class="col-12 text-end">
                                         <button type="submit" class="btn">
                                             <div class="row gx-2 align-items-center">
-                                                <div class="col-auto d-flex align-items-center"><img :src="require('./assets/interface/paypal.png')" width="16" height="16" /></div>
+                                                <div class="col-auto d-flex align-items-center"><img :src="getIcon('paypal.png')" width="16" height="16" /></div>
                                                 <div class="col-auto">{{ $t('donate') }}</div>
                                             </div>
                                         </button>
@@ -852,9 +859,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><small class="text-normal">{{ $t('darkmatter') }}</small></td>
-                                            <td class="text-end"><small class="text-light">{{ numeralFormat(data['darkmatter'].count.toPrecision(4), '0.[000]a') }}</small></td>
-                                            <td class="text-end"><small class="text-light">{{ numeralFormat(stats.allTimeDarkmatter.toPrecision(4), '0.[000]a') }}</small></td>
+                                            <td><small class="text-normal">{{ $t('tiandaoLaw') }}</small></td>
+                                            <td class="text-end"><small class="text-light">{{ numeralFormat(data['tiandaoLaw'].count.toPrecision(4), '0.[000]a') }}</small></td>
+                                            <td class="text-end"><small class="text-light">{{ numeralFormat(stats.allTimeTiandaoLaw.toPrecision(4), '0.[000]a') }}</small></td>
                                         </tr>
                                         <tr>
                                             <td><small class="text-normal">{{ $t('manualGain') }}</small></td>
@@ -914,7 +921,7 @@
                                                 <div class="col-12 small">
                                                     <div class="row gx-2">
                                                         <div class="col-auto d-flex align-items-center">
-                                                            <img :src="require(`./assets/interface/${ach.icon}`)" width="16" height="16" />
+                                                            <img :src="getIcon(ach.icon)" width="16" height="16" />
                                                         </div>
                                                         <div class="col-auto">
                                                             <span class="h6 text-light">{{ $t(ach.data) }}</span>
@@ -950,7 +957,7 @@
                                                 <div class="col-12 small">
                                                     <div class="row gx-2">
                                                         <div class="col-auto d-flex align-items-center">
-                                                            <img :src="require(`./assets/interface/${ach.icon}`)" width="16" height="16" />
+                                                            <img :src="getIcon(ach.icon)" width="16" height="16" />
                                                         </div>
                                                         <div class="col text-truncate">
                                                             <span class="h6 text-light">{{ $t(ach.data) }}</span>
@@ -1125,7 +1132,7 @@
                     </pane>
                     
                     <!-- RANK PANE -->
-                    <pane id="rankPane" icon="rank.png" :descs="['rankPane_desc']">
+                    <pane id="rankPane" icon="rank.png" :descs="['jingjiePane_desc']">
                         <card id="account" :checked="token != null">
                             <div v-if="token" class="col-12">
                                 <div class="row gx-3 gy-2 align-items-center">
@@ -1283,28 +1290,28 @@
                         <div class="col-12">
                             <div class="row g-2 align-items-center">
                                 <div class="col">
-                                    <small class="text-normal">{{ $t('shipT1') }}</small>
+                                    <small class="text-normal">{{ $t('diziT1') }}</small>
                                 </div>
                                 <div class="col-auto">
-                                    <span class="text-light">{{ data['shipT1'].active }}</span>
-                                    <small class="ms-1 text-normal">/{{ data['shipT1'].count }}</small>
+                                    <span class="text-light">{{ data['diziT1'].active }}</span>
+                                    <small class="ms-1 text-normal">/{{ data['diziT1'].count }}</small>
                                 </div>
                                 <div class="col-auto">
                                     <div class="btn-group">
-                                        <button class="btn p-1" @click="setActiveShip({ id:'shipT1', count:1 })">
+                                        <button class="btn p-1" @click="setActiveShip({ id:'diziT1', count:1 })">
                                             +
                                         </button>
-                                        <button class="btn p-1" @click="setActiveShip({ id:'shipT1', count:'max' })">
+                                        <button class="btn p-1" @click="setActiveShip({ id:'diziT1', count:'max' })">
                                             ++
                                         </button>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="btn-group">
-                                        <button class="btn p-1" @click="setActiveShip({ id:'shipT1', count:-1 })">
+                                        <button class="btn p-1" @click="setActiveShip({ id:'diziT1', count:-1 })">
                                             -
                                         </button>
-                                        <button class="btn p-1" @click="setActiveShip({ id:'shipT1', count:'none' })">
+                                        <button class="btn p-1" @click="setActiveShip({ id:'diziT1', count:'none' })">
                                             --
                                         </button>
                                     </div>
@@ -1362,7 +1369,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div v-for="shipId in ['shipT1', 'shipT2', 'shipT3', 'shipT4', 'shipT5']" :key="shipId" class="col-12">
+                        <div v-for="shipId in ['diziT1', 'diziT2', 'diziT3', 'diziT4', 'diziT5']" :key="shipId" class="col-12">
                             <div class="row g-2 align-items-center">
                                 <div class="col">
                                     <small class="text-normal">{{ $t(shipId) }}</small>
@@ -1720,6 +1727,8 @@ import ghApi from './apis/ghApi.js'
 
 import axios from 'axios'
 import moment from 'moment'
+import { getIcon, getAsset } from './utils/icons'
+import whiteLogo from './assets/whiteLogo.png'
 
 export default {
     components: {
@@ -1732,7 +1741,7 @@ export default {
         'card': Card,
         'resource': Resource,
         'buildable': Buildable,
-        'emc': Emc,
+        'wuhua': Emc,
         'star': Star,
         'fleet': Fleet,
         'calc-segment': CalcSegment,
@@ -1766,7 +1775,7 @@ export default {
             newCompanyName: null,
             autoSavingDuration: null,
             
-            calcId: 'metal',
+            calcId: 'lingstone',
             activeStar: 'star201',
             
             spyModal: null,
@@ -1811,6 +1820,7 @@ export default {
         setTimeout(this.start, 1000)
     },
     methods: {
+        getIcon, getAsset,
         ...mapMutations([
         
             'setLocale', 'setActivePane', 'setLastUpdateTime', 'setTimeSinceAutoSave', 'setCompanyName', 'setAutoSaveInterval',

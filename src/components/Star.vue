@@ -26,7 +26,7 @@
                                 <div class="col-auto text-light"> 
                                     <div class="row g-1 align-items-center">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="require(`../assets/interface/${data[id].resource1}.png`)" width="12" height="12" />
+                                            <img :src="getIcon(data[id].resource1 + '.png')" width="12" height="12" />
                                         </div>
                                         <div class="col-auto">
                                             <span class="text-normal">{{ $t(data[id].resource1) }}</span>
@@ -39,7 +39,7 @@
                                 <div class="col-auto text-light">
                                     <div class="row g-1 align-items-center">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="require(`../assets/interface/${data[id].resource2}.png`)" width="12" height="12" />
+                                            <img :src="getIcon(data[id].resource2 + '.png')" width="12" height="12" />
                                         </div>
                                         <div class="col-auto">
                                             <span class="text-normal">{{ $t(data[id].resource2) }}</span>
@@ -77,7 +77,7 @@
                                         <div class="col-auto text-light"> 
                                             <div class="row g-1">
                                                 <div class="col-auto d-flex align-items-center">
-                                                    <img :src="require(`../assets/interface/${data[id].resource1}.png`)" width="12" height="12" />
+                                                    <img :src="getIcon(data[id].resource1 + '.png')" width="12" height="12" />
                                                 </div>
                                                 <div class="col-auto">
                                                     <span class="text-normal">{{ $t(data[id].resource1) }}</span>
@@ -87,7 +87,7 @@
                                         <div class="col-auto text-light">
                                             <div class="row g-1">
                                                 <div class="col-auto d-flex align-items-center">
-                                                    <img :src="require(`../assets/interface/${data[id].resource2}.png`)" width="12" height="12" />
+                                                    <img :src="getIcon(data[id].resource2 + '.png')" width="12" height="12" />
                                                 </div>
                                                 <div class="col-auto">
                                                     <span class="text-normal">{{ $t(data[id].resource2) }}</span>
@@ -145,6 +145,7 @@
 import Costs from './Costs.vue'
 
 import { mapState, mapGetters, mapActions } from 'vuex'
+import { getIcon } from '../utils/icons'
 
 export default {
     props: [ 'id' ],
@@ -160,6 +161,7 @@ export default {
         ]),
     },
     methods: {
+        getIcon,
         ...mapActions([
             'build',
         ]),
