@@ -17,13 +17,7 @@
                 </div>
 
                 <div class="col text-truncate px-0">
-                    <span class="h5 text-light mb-0">{{ companyName }} Company</span>
-                </div>
-                
-                <div class="col-auto px-0">
-                    <button class="btn p-1" @click="changeLogModal.show();">
-                        <small class="small text-normal">v{{ currentRelease }}</small>
-                    </button>
+                    <span class="h5 text-light mb-0">{{ companyName }}</span>
                 </div>
 
                 <div class="col-auto d-lg-none">
@@ -132,14 +126,8 @@
                         <img :src="whiteLogo" width="36" height="36" />
                     </button>
                 </div>
-                
-                <div class="col-auto ms-auto">
-                    <a href="https://discord.gg/3UkgeeT9CV" target="_blank" data-bs-toggle="tooltip" data-bs-placement="left" title="Discord">
-                        <img :src="getIcon('discord.png')" width="16" height="16" />
-                    </a>
-                </div>
-                
-                <div class="col-auto cursor-hover">
+
+                <div class="col-auto ms-auto cursor-hover">
                     <button @click="setActivePane('donatingPane')">
                         <img :src="getIcon('donating.png')" width="16" height="16" />
                         <span class="ms-1 text-light">{{ $t('donatingPane') }}</span>
@@ -204,12 +192,6 @@
                             <button class="dropdown-item cursor-hover" @click="setActivePane('settingsPane')">
                                 <img :src="getIcon('cog.png')" width="16" height="16" class="me-2">
                                 {{ $t('settingsPane') }}
-                            </button>
-                        </li>
-                        <li>
-                            <button class="dropdown-item cursor-hover" @click="setActivePane('aboutPane')">
-                                <img :src="getIcon('about.png')" width="16" height="16" class="me-2">
-                                {{ $t('aboutPane') }}
                             </button>
                         </li>
                     </ul>
