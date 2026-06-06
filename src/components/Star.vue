@@ -26,7 +26,7 @@
                                 <div class="col-auto text-light"> 
                                     <div class="row g-1 align-items-center">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="getIcon(data[id].resource1 + '.png')" width="12" height="12" />
+                                            <span class="icon-emoji small">{{ getIcon(data[id].resource1 + '.png') }}</span>
                                         </div>
                                         <div class="col-auto">
                                             <span class="text-normal">{{ $t(data[id].resource1) }}</span>
@@ -39,7 +39,7 @@
                                 <div class="col-auto text-light">
                                     <div class="row g-1 align-items-center">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="getIcon(data[id].resource2 + '.png')" width="12" height="12" />
+                                            <span class="icon-emoji small">{{ getIcon(data[id].resource2 + '.png') }}</span>
                                         </div>
                                         <div class="col-auto">
                                             <span class="text-normal">{{ $t(data[id].resource2) }}</span>
@@ -77,7 +77,7 @@
                                         <div class="col-auto text-light"> 
                                             <div class="row g-1">
                                                 <div class="col-auto d-flex align-items-center">
-                                                    <img :src="getIcon(data[id].resource1 + '.png')" width="12" height="12" />
+                                                    <span class="icon-emoji small">{{ getIcon(data[id].resource1 + '.png') }}</span>
                                                 </div>
                                                 <div class="col-auto">
                                                     <span class="text-normal">{{ $t(data[id].resource1) }}</span>
@@ -87,7 +87,7 @@
                                         <div class="col-auto text-light">
                                             <div class="row g-1">
                                                 <div class="col-auto d-flex align-items-center">
-                                                    <img :src="getIcon(data[id].resource2 + '.png')" width="12" height="12" />
+                                                    <span class="icon-emoji small">{{ getIcon(data[id].resource2 + '.png') }}</span>
                                                 </div>
                                                 <div class="col-auto">
                                                     <span class="text-normal">{{ $t(data[id].resource2) }}</span>

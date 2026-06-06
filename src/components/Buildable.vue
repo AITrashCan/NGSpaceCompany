@@ -153,7 +153,7 @@
                                     <div class="heading-6">{{ $t('storage') }}</div>
                                     <div class="row g-1">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="getIcon(data[id].storage.id + '.png')" width="12" height="12" />
+                                            <span class="icon-emoji small">{{ getIcon(data[id].storage.id + '.png') }}</span>
                                         </div>
                                         <div class="col">
                                             <small class="text-light">{{ $t(data[id].storage.id) }}</small>
@@ -169,7 +169,7 @@
                                     <div class="heading-6">{{ $t('production') }}</div>
                                     <div v-for="output in data[id].outputs" :key="output.id" class="row g-1">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="getIcon(output.id + '.png')" width="12" height="12" />
+                                            <span class="icon-emoji small">{{ getIcon(output.id + '.png') }}</span>
                                         </div>
                                         <div class="col">
                                             <small class="text-light">{{ $t(output.id) }}</small>
@@ -181,7 +181,7 @@
                                     </div>
                                     <div v-for="input in data[id].inputs" :key="input.id" class="row g-1">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="getIcon(input.id + '.png')" width="12" height="12" />
+                                            <span class="icon-emoji small">{{ getIcon(input.id + '.png') }}</span>
                                         </div>
                                         <div class="col">
                                             <small class="text-light">{{ $t(input.id) }}</small>

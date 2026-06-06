@@ -3,7 +3,7 @@
     <div v-if="!loaded" id="loadScreen">
         <div class="row row-cols-1 g-2 justify-content-center">
             <div class="col text-center"><h1 class="text-light">天道长生录</h1></div>
-            <div class="col text-center"><img id="loadLogo" style="width:25%; height:auto;" :src="whiteLogo" /></div>
+            <div class="col text-center"><span class="icon-emoji load">☯️</span></div>
             <div class="col text-center"><h5 class="text-light">Reticulating Splines...</h5></div>
         </div>
     </div>
@@ -13,7 +13,7 @@
             <top-header>
             
                 <div class="col-auto">
-                    <img :src="whiteLogo" width="42" height="42" alt="Game logo" />
+                    <span class="icon-emoji logo">☯️</span>
                 </div>
 
                 <div class="col text-truncate px-0">
@@ -123,29 +123,23 @@
                         <div v-if="hasNotif" class="position-absolute top-0 end-0" style="line-height:1">
                             <i class="fas fa-fw fa-certificate text-success small"></i>
                         </div>
-                        <img :src="whiteLogo" width="36" height="36" />
+                        <span class="icon-emoji medium">☯️</span>
                     </button>
                 </div>
 
-                <div class="col-auto ms-auto cursor-hover">
-                    <button @click="setActivePane('donatingPane')">
-                        <img :src="getIcon('donating.png')" width="16" height="16" />
-                        <span class="ms-1 text-light">{{ $t('donatingPane') }}</span>
-                    </button>
-                </div>
-                
-                <div class="col-auto cursor-hover position-relative" data-bs-toggle="tooltip" data-bs-placement="left" :title="$t('achievementPane')">
+                                
+                <div class="col-auto ms-auto cursor-hover position-relative" data-bs-toggle="tooltip" data-bs-placement="left" :title="$t('achievementPane')">
                     <button @click="setActivePane('achievementPane')">
                         <div v-if="isNotif('achievementPane')" class="position-absolute top-0 end-0" style="line-height:1">
                             <i class="fas fa-fw fa-certificate text-success small"></i>
                         </div>
-                        <img :src="getIcon('trophy.png')" width="16" height="16" />
+                        <span class="icon-emoji small">{{ getIcon('trophy.png') }}</span>
                     </button>
                 </div>
                 
                 <div class="col-auto cursor-hover position-relative" data-bs-toggle="tooltip" data-bs-placement="left" :title="$t('rankPane')">
                     <button @click="setActivePane('rankPane')">
-                        <img :src="getIcon('rank.png')" width="16" height="16" />
+                        <span class="icon-emoji small">{{ getIcon('rank.png') }}</span>
                     </button>
                 </div>
                 
@@ -184,13 +178,13 @@
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <button class="dropdown-item cursor-hover" @click="setActivePane('helpPane')">
-                                <img :src="getIcon('help.png')" width="16" height="16" class="me-2">
+                                <span class="icon-emoji nav">{{ getIcon('help.png') }}</span>
                                 {{ $t('helpPane') }}
                             </button>
                         </li>
                         <li>
                             <button class="dropdown-item cursor-hover" @click="setActivePane('settingsPane')">
-                                <img :src="getIcon('cog.png')" width="16" height="16" class="me-2">
+                                <span class="icon-emoji nav">{{ getIcon('cog.png') }}</span>
                                 {{ $t('settingsPane') }}
                             </button>
                         </li>
@@ -785,7 +779,7 @@
                                     <div class="col-12 text-end">
                                         <button type="submit" class="btn">
                                             <div class="row gx-2 align-items-center">
-                                                <div class="col-auto d-flex align-items-center"><img :src="getIcon('paypal.png')" width="16" height="16" /></div>
+                                                <div class="col-auto d-flex align-items-center"><span class="icon-emoji small">{{ getIcon('paypal.png') }}</span></div>
                                                 <div class="col-auto">{{ $t('donate') }}</div>
                                             </div>
                                         </button>
@@ -903,7 +897,7 @@
                                                 <div class="col-12 small">
                                                     <div class="row gx-2">
                                                         <div class="col-auto d-flex align-items-center">
-                                                            <img :src="getIcon(ach.icon)" width="16" height="16" />
+                                                            <span class="icon-emoji small">{{ getIcon(ach.icon) }}</span>
                                                         </div>
                                                         <div class="col-auto">
                                                             <span class="h6 text-light">{{ $t(ach.data) }}</span>
@@ -939,7 +933,7 @@
                                                 <div class="col-12 small">
                                                     <div class="row gx-2">
                                                         <div class="col-auto d-flex align-items-center">
-                                                            <img :src="getIcon(ach.icon)" width="16" height="16" />
+                                                            <span class="icon-emoji small">{{ getIcon(ach.icon) }}</span>
                                                         </div>
                                                         <div class="col text-truncate">
                                                             <span class="h6 text-light">{{ $t(ach.data) }}</span>
@@ -1709,8 +1703,7 @@ import ghApi from './apis/ghApi.js'
 
 import axios from 'axios'
 import moment from 'moment'
-import { getIcon, getAsset } from './utils/icons'
-import whiteLogo from './assets/whiteLogo.png'
+import { getIcon } from './utils/icons'
 
 export default {
     components: {
@@ -1802,7 +1795,7 @@ export default {
         setTimeout(this.start, 1000)
     },
     methods: {
-        getIcon, getAsset,
+        getIcon,
         ...mapMutations([
         
             'setLocale', 'setActivePane', 'setLastUpdateTime', 'setTimeSinceAutoSave', 'setCompanyName', 'setAutoSaveInterval',

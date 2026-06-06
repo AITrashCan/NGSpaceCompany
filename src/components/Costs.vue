@@ -22,7 +22,7 @@
         </div>
         <div v-for="cost in costs" :key="cost.id" class="row g-1">
             <div class="col-auto d-flex align-items-center">
-                <img :src="getIcon(cost.id + '.png')" width="12" height="12" />
+                <span class="icon-emoji small">{{ getIcon(cost.id + '.png') }}</span>
             </div>
             <div class="col">
                 <small class="text-light">{{ $t(cost.id) }}</small>

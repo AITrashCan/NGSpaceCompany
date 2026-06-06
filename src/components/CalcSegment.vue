@@ -7,7 +7,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('xuangang.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('xuangang.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('xuangang') }}</small>
@@ -25,7 +25,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('jinsha.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('jinsha.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('jinsha') }}</small>
@@ -43,7 +43,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('yunjin.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('yunjin.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('yunjin') }}</small>
@@ -61,7 +61,7 @@
 
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('tiandao.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('tiandao.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('tiandao') }}</small>
@@ -79,7 +79,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('hanbing.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('hanbing.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('hanbing') }}</small>
@@ -103,7 +103,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('xuangang.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('xuangang.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('xuangang') }}</small>
@@ -121,7 +121,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('jinsha.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('jinsha.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('jinsha') }}</small>
@@ -139,7 +139,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('yunjin.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('yunjin.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('yunjin') }}</small>
@@ -157,7 +157,7 @@
 
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('tiandao.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('tiandao.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('tiandao') }}</small>
@@ -175,7 +175,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('hanbing.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('hanbing.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('hanbing') }}</small>
@@ -199,7 +199,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('xuangang.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('xuangang.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('xuangang') }}</small>
@@ -217,7 +217,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('jinsha.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('jinsha.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('jinsha') }}</small>
@@ -235,7 +235,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('yunjin.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('yunjin.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('yunjin') }}</small>
@@ -253,7 +253,7 @@
 
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('tiandao.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('tiandao.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('tiandao') }}</small>
@@ -271,7 +271,7 @@
             
             <div class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon('hanbing.png')" width="12" height="12" />
+                    <span class="icon-emoji small">{{ getIcon('hanbing.png') }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t('hanbing') }}</small>

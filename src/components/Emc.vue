@@ -5,7 +5,7 @@
                 <div class="col">
                     <div class="row g-1 align-items-baseline justify-content-center">
                         <div class="col-auto d-flex align-items-center">
-                            <img :src="getIcon(data[id].source + '.png')" width="12" height="12" />
+                            <span class="icon-emoji small">{{ getIcon(data[id].source + '.png') }}</span>
                         </div>
                         <div class="col-auto text-center">
                             <div class="small">{{ $t(data[id].source) }}</div>
@@ -19,7 +19,7 @@
                 <div class="col">
                     <div class="row g-1 align-items-baseline justify-content-center">
                         <div class="col-auto d-flex align-items-center">
-                            <img :src="getIcon(data[id].resource + '.png')" width="12" height="12" />
+                            <span class="icon-emoji small">{{ getIcon(data[id].resource + '.png') }}</span>
                         </div>
                         <div class="col-auto text-center">
                             <div class="small">{{ $t(data[id].resource) }}</div>

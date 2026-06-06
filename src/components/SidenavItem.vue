@@ -6,7 +6,7 @@
             </div>
             <div class="row gx-2">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="getIcon(icon)" width="16" height="16" />
+                    <span class="icon-emoji nav">{{ getIcon(icon) }}</span>
                 </div>
                 <div class="col">
                     {{ $t(id) }}

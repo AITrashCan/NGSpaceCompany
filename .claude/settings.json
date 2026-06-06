@@ -10,7 +10,16 @@
       "Bash(node -e \"const zh=JSON.parse\\(require\\('fs'\\).readFileSync\\('src/locales/zh.json','utf8'\\)\\); const keys=Object.keys\\(zh\\); const core=keys.filter\\(k=>k.includes\\('core'\\)||k.includes\\('Core'\\)\\); console.log\\('core keys:', core.slice\\(0,20\\)\\);\")",
       "Bash(node -e \"const zh=JSON.parse\\(require\\('fs'\\).readFileSync\\('src/locales/zh.json','utf8'\\)\\); const keys=Object.keys\\(zh\\); const t3keys=keys.filter\\(k=>k.includes\\('T3'\\)\\); console.log\\('T3 keys:', t3keys\\);\")",
       "Bash(node -e \"const fr=JSON.parse\\(require\\('fs'\\).readFileSync\\('src/locales/fr.json','utf8'\\)\\); console.log\\('diziT3:', fr['diziT3']\\); console.log\\('diziT3_desc:', fr['diziT3_desc']\\); console.log\\('mijingStation:', fr['mijingStation']\\); console.log\\('mijingStation_desc:', fr['mijingStation_desc']\\); console.log\\('dafazhenT3:', fr['dafazhenT3']\\); console.log\\('dafazhenT3_desc:', fr['dafazhenT3_desc']\\); console.log\\('wudaoT3:', fr['wudaoT3']\\); console.log\\('wudaoT3_desc:', fr['wudaoT3_desc']\\);\")",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(rm d:/ai_code/NGSpaceCompany/src/assets/bk.jpg && rm d:/ai_code/NGSpaceCompany/src/assets/whiteLogo.png && rm d:/ai_code/NGSpaceCompany/src/assets/interface/*.png)",
+      "Bash(node scripts/fix-cultivation-batch2.js)",
+      "Bash(node scripts/sync-en-fr-batch2.js)",
+      "Bash(npm ls *)",
+      "Bash(node scripts/gen-background.js)",
+      "Bash(node scripts/gen-background-svg.js)"
+    ],
+    "additionalDirectories": [
+      "d:\\ai_code\\NGSpaceCompany\\src\\assets\\interface"
     ]
   }
 }
