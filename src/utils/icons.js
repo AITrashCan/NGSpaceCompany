@@ -4,7 +4,7 @@
 const ICON_MAP = {
     // Resources — 修仙灵材
     'zhenqi.png': '🌬️',       // 真气 — breath of qi/energy
-    'zhenqiCang.png': '🏺',    // 真气池 — qi storage vessel
+    'zhenqiCang.png': '🔵',    // 真气池 — qi pool (blue orb)
     'lingstone.png': '💎',     // 灵石 — spirit stone/crystal
     'baoshi.png': '☄️',       // 陨铁 — meteorite iron
     'lingmu.png': '🌿',       // 灵木 — spirit wood
@@ -16,8 +16,8 @@ const ICON_MAP = {
     'huoyan.png': '🔥',       // 地火 — earthfire
     'miasma.png': '☠️',       // 瘴气 — miasma/toxic gas
     'xuangang.png': '🛡️',     // 玄钢 — mystic steel
-    'jinsha.png': '✦',        // 金砂 — gold sand
-    'yinsha.png': '❄',       // 银砂 — silver sand
+    'jinsha.png': '✴️',        // 金砂 — gold sand (golden star burst)
+    'yinsha.png': '💿',       // 银砂 — silver sand (silver disc)
     'qingqi.png': '🎐',       // 清气 — clear qi
     'taiyi.png': '🔮',       // 太乙 — primordial essence
     'hanbing.png': '🧊',      // 寒冰 — ice
