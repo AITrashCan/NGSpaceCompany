@@ -18,7 +18,7 @@
                     </small>
                     <small class="text-normal ms-1">/s</small>
                 </div>
-                <div v-if="count != null" class="col-auto text-end" style="width:110px;">
+                <div v-if="count != null" class="col-auto text-end sidenav-count">
                     <small class="text-uppercase" :class="{ 'text-light':(count > 0 && (!storage || count < storage)), 'text-normal':count == 0, 'text-danger':count < 0, 'text-success':storage && count >= storage }">{{ numeralFormat(count.toPrecision(4), '0.[000]a') }}</small>
                     <small v-if="storage" class="text-uppercase text-normal ms-1">/{{ numeralFormat(storage.toPrecision(4), '0.[000]a') }}</small>
                     <small v-if="potential >= 0" class="text-normal ms-1">({{ potential }})</small>
@@ -47,6 +47,12 @@
     .sidenav-item:hover, .sidenav-item:focus, .sidenav-item.active {
         color: #e8e6f0;
         background-color: rgba(200,180,255,.1);
+    }
+
+    .sidenav-count { width: 110px; }
+
+    @media (max-width: 575.98px) {
+        .sidenav-count { width: 85px; }
     }
 </style>
 

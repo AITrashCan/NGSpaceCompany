@@ -996,5 +996,7 @@
     "costTo150": "Costs to 150",
     "costTo250": "Costs to 250",
     "calcModal": "Forge Cost Calculator",
-    "lingzhenDuanModal": "Array Segment Cost Calculator"
+    "lingzhenDuanModal": "Array Segment Cost Calculator",
+    "segmentModal": "Segment Cost Calculator",
+    "rankPane_nodata": "No leaderboard data available"
 }

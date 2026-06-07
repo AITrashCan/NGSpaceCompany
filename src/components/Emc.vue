@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-sm-6 col-md-4">
         <div class="rounded border px-2 py-2">
             <div class="row g-1">
                 <div class="col">

@@ -10,7 +10,7 @@
 
     <div v-if="loaded" id="gameScreen">
         <div id="sidebar" :class="{ 'open':sidebarOpen }" role="navigation">
-            <top-header>
+<top-header>
             
                 <div class="col-auto">
                     <span class="icon-emoji logo">☯️</span>
@@ -115,6 +115,7 @@
                 </div>
             </inner-content>
         </div>
+        <div v-if="sidebarOpen" class="sidebar-backdrop d-lg-none" @click="sidebarOpen = false"></div>
         <div id="page">
             <top-header>
             
@@ -1825,10 +1826,10 @@ export default {
             this.selectedAutoEmcInterval = this.autoEmcInterval / 1000
             
             this.ghUpdate()
-            
+
             this.fastInterval = setInterval(() => { this.fastUpdate() }, 100)
             this.slowInterval = setInterval(() => { this.slowUpdate() }, 1000)
-            this.ghInterval = setInterval(() => { this.ghUpdate() }, 3600000)
+            // this.ghInterval = setInterval(() => { this.ghUpdate() }, 3600000)
             
             this.loaded = true
             
@@ -1925,21 +1926,21 @@ export default {
                 if (this.showToastAutoSave) this.toastAutoSave.show()
                 
                 if (this.token) {
-                    
+
                     let data = {
                         rank: this.rank,
                     }
-                    axios.post('https://ngspacecompany.exileng.com/api/post/', data, { headers: { 'Authorization': 'Token ' +  this.token }})
-                }   
-                
-                axios.get('https://ngspacecompany.exileng.com/api/ranks/').then((response) => { this.leaderboard_ranks = response.data })
+                    // axios.post('https://ngspacecompany.exileng.com/api/post/', data, { headers: { 'Authorization': 'Token ' +  this.token }})
+                }
+
+                // axios.get('https://ngspacecompany.exileng.com/api/ranks/').then((response) => { this.leaderboard_ranks = response.data })
             }            
         },
         ghUpdate() {
-        
-            ghApi
-                .get('/repos/ExileNG/NGSpaceCompany/releases/latest')
-                .then((response) => { this.ghLatestRelease = response.data.tag_name })
+
+            // ghApi
+            //     .get('/repos/ExileNG/NGSpaceCompany/releases/latest')
+            //     .then((response) => { this.ghLatestRelease = response.data.tag_name })
         },
         exportData() {
             
@@ -1992,27 +1993,24 @@ export default {
             window.location.reload()
         },
         onConnect(login, pwd) {
-            
-            if (login && login.trim().length > 4 && pwd && pwd.trim().length > 4)
-                axios.post('https://ngspacecompany.exileng.com/api/register/', { username:login.trim(), password:pwd.trim() })
-                    .then((response) => {
-                    
-                        this.setUsername(login.trim())
-                        this.setToken(response.data.token)
-                    })
-                    .catch(() => {
-                    
-                        axios.post('https://ngspacecompany.exileng.com/api/login/', { username:login.trim(), password:pwd.trim() })
-                            .then((response) => {
-                    
-                                this.setUsername(login.trim())
-                                this.setToken(response.data.token)
-                            })
-                            .catch((error) => {
-                            
-                                console.log(error.response.data)
-                            })
-                    })
+            // Backend API disabled — no network requests
+
+            // if (login && login.trim().length > 4 && pwd && pwd.trim().length > 4)
+            //     axios.post('https://ngspacecompany.exileng.com/api/register/', { username:login.trim(), password:pwd.trim() })
+            //         .then((response) => {
+            //             this.setUsername(login.trim())
+            //             this.setToken(response.data.token)
+            //         })
+            //         .catch(() => {
+            //             axios.post('https://ngspacecompany.exileng.com/api/login/', { username:login.trim(), password:pwd.trim() })
+            //                 .then((response) => {
+            //                     this.setUsername(login.trim())
+            //                     this.setToken(response.data.token)
+            //                 })
+            //                 .catch((error) => {
+            //                     console.log(error.response.data)
+            //                 })
+            //         })
         },
         onDisconnect() {
         
@@ -2056,7 +2054,7 @@ export default {
         
         clearInterval(this.fastInterval)
         clearInterval(this.slowInterval)
-        clearInterval(this.ghInterval)
+        // clearInterval(this.ghInterval)
     },
 }
 </script>

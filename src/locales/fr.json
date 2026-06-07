@@ -996,5 +996,7 @@
     "costTo150": "Coûts jusqu'à 150",
     "costTo250": "Coûts jusqu'à 250",
     "calcModal": "Calculateur de Coût de Forge",
-    "lingzhenDuanModal": "Calculateur de Coûts des Segments de Tableau"
+    "lingzhenDuanModal": "Calculateur de Coûts des Segments de Tableau",
+    "segmentModal": "Calculateur de Coûts de Segment",
+    "rankPane_nodata": "Aucune donnée de classement disponible"
 }

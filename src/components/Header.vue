@@ -10,7 +10,7 @@
     .header {
         height: 3.5rem;
         padding: 0 .5rem;
-        background-color: #343c4a;
+        background-color: #1e1a3a;
     }
 
     @media (min-width: 992px) {

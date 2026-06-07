@@ -996,5 +996,7 @@
     "costTo150": "Costs to 150",
     "costTo250": "Costs to 250",
     "calcModal": "营造消耗计算器",
-    "lingzhenDuanModal": "灵阵段消耗计算器"
+    "lingzhenDuanModal": "灵阵段消耗计算器",
+    "segmentModal": "段位消耗计算器",
+    "rankPane_nodata": "暂无排行榜数据"
 }
