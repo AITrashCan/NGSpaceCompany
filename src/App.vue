@@ -2,9 +2,9 @@
 
     <div v-if="!loaded" id="loadScreen">
         <div class="row row-cols-1 g-2 justify-content-center">
-            <div class="col text-center"><h1 class="text-light">天道长生录</h1></div>
+            <div class="col text-center"><h1 style="color:#d4a84c;font-family:'Inter',sans-serif;letter-spacing:.15em">天道长生录</h1></div>
             <div class="col text-center"><span class="icon-emoji load">☯️</span></div>
-            <div class="col text-center"><h5 class="text-light">Reticulating Splines...</h5></div>
+            <div class="col text-center"><h5 class="text-normal">灵气聚敛中...</h5></div>
         </div>
     </div>
 
@@ -136,13 +136,7 @@
                         <span class="icon-emoji small">{{ getIcon('trophy.png') }}</span>
                     </button>
                 </div>
-                
-                <div class="col-auto cursor-hover position-relative" data-bs-toggle="tooltip" data-bs-placement="left" :title="$t('rankPane')">
-                    <button @click="setActivePane('rankPane')">
-                        <span class="icon-emoji small">{{ getIcon('rank.png') }}</span>
-                    </button>
-                </div>
-                
+
                 <div class="col-auto">
                     <button class="text-normal cursor-hover" data-bs-toggle="dropdown">
                         <span v-if="locale == 'en'" class="flag-icon flag-icon-gb rounded"></span>
@@ -202,7 +196,7 @@
                 
                 <div class="tab-content" style="padding-bottom: 65px;">
                     
-                    <!-- ENERGY PANE -->
+                    <!-- 真气 -->
                     <pane id="zhenqiPane" icon="zhenqi.png" :descs="['zhenqiPane_desc']">
                         <resource id="zhenqi" />
                         <buildable id="zhenqiT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
@@ -213,7 +207,7 @@
                         <buildable id="zhenqiT6" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="suixing" />
                     </pane>
                     
-                    <!-- BATTERY PANE -->
+                    <!-- 真气池 -->
                     <pane id="zhenqiCangPane" icon="zhenqiCang.png" :descs="['zhenqiCangPane_desc']">
                         <buildable id="zhenqiS1" btnText="build" collapse="true" unlocker="techZhenqiCang1" />
                         <buildable id="zhenqiS2" btnText="build" collapse="true" unlocker="techZhenqiCang2" />
@@ -223,7 +217,7 @@
                         <buildable id="zhenqiS6" btnText="build" collapse="true" unlocker="techZhenqiCang6" />
                     </pane>
                     
-                    <!-- PLASMA PANE -->
+                    <!-- 元神 -->
                     <pane id="yuanshenPane" icon="yuanshen.png" :descs="['yuanshenPane_desc']">
                         <resource id="yuanshen" />
                         <buildable id="yuanshenT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techYuanshen1" />
@@ -235,7 +229,7 @@
                         <buildable id="yuanshenS3" btnText="build" collapse="true" unlocker="techYuanshenCang3" />
                     </pane>
                     
-                    <!-- METEORITE PANE -->
+                    <!-- 天道碎片 -->
                     <pane id="tiandaoPane" icon="tiandao.png" :descs="['tiandaoPane_desc']">
                         <resource id="tiandao" />
                         <buildable id="tiandaoS1" btnText="upgrade" collapse="true" />
@@ -245,7 +239,7 @@
                         <buildable id="tiandaoT4" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTiandao4" />
                     </pane>
                     
-                    <!-- CARBON PANE -->
+                    <!-- 玄炭 -->
                     <pane id="xuantanPane" icon="xuantan.png" :descs="['xuantanPane_desc']">
                         <resource id="xuantan" />
                         <buildable id="xuantanS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -256,7 +250,7 @@
                         <buildable id="xuantanT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- OIL PANE -->
+                    <!-- 灵液 -->
                     <pane id="lingyePane" icon="lingye.png" :descs="['lingyePane_desc']">
                         <resource id="lingye" />
                         <buildable id="lingyeS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -267,7 +261,7 @@
                         <buildable id="lingyeT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- METAL PANE -->
+                    <!-- 灵石 -->
                     <pane id="lingstonePane" icon="lingstone.png" :descs="['lingstonePane_desc']">
                         <resource id="lingstone" />
                         <buildable id="lingstoneS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -278,7 +272,7 @@
                         <buildable id="lingstoneT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- GEM PANE -->
+                    <!-- 陨铁 -->
                     <pane id="baoshiPane" icon="baoshi.png" :descs="['baoshiPane_desc']">
                         <resource id="baoshi" />
                         <buildable id="baoshiS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -289,7 +283,7 @@
                         <buildable id="baoshiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- WOOD PANE -->
+                    <!-- 灵木 -->
                     <pane id="lingmuPane" icon="lingmu.png" :descs="['lingmuPane_desc']">
                         <resource id="lingmu" />
                         <buildable id="lingmuS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -300,7 +294,7 @@
                         <buildable id="lingmuT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- SILICON PANE -->
+                    <!-- 云晶 -->
                     <pane id="yunjinPane" icon="yunjin.png" :descs="['yunjinPane_desc']">
                         <resource id="yunjin" />
                         <buildable id="yunjinS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -311,7 +305,7 @@
                         <buildable id="yunjinT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- URANIUM PANE -->
+                    <!-- 雷灵 -->
                     <pane id="leilingPane" icon="leiling.png" :descs="['leilingPane_desc']">
                         <resource id="leiling" />
                         <buildable id="leilingS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -322,7 +316,7 @@
                         <buildable id="leilingT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- LAVA PANE -->
+                    <!-- 地火 -->
                     <pane id="huoyanPane" icon="huoyan.png" :descs="['huoyanPane_desc']">
                         <resource id="huoyan" />
                         <buildable id="huoyanS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -333,7 +327,7 @@
                         <buildable id="huoyanT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- LUNARITE PANE -->
+                    <!-- 月华石 -->
                     <pane id="yueshiPane" icon="yueshi.png" :descs="['yueshiPane_desc']">
                         <resource id="yueshi" />
                         <buildable id="yueshiS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -344,7 +338,7 @@
                         <buildable id="yueshiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- METHANE PANE -->
+                    <!-- 瘴气 -->
                     <pane id="miasmaPane" icon="miasma.png" :descs="['miasmaPane_desc']">
                         <resource id="miasma" />
                         <buildable id="miasmaS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -355,7 +349,7 @@
                         <buildable id="miasmaT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- TITANIUM PANE -->
+                    <!-- 玄钢 -->
                     <pane id="xuangangPane" icon="xuangang.png" :descs="['xuangangPane_desc']">
                         <resource id="xuangang" />
                         <buildable id="xuangangS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -366,7 +360,7 @@
                         <buildable id="xuangangT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- GOLD PANE -->
+                    <!-- 金砂 -->
                     <pane id="jinshaPane" icon="jinsha.png" :descs="['jinshaPane_desc']">
                         <resource id="jinsha" />
                         <buildable id="jinshaS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -377,7 +371,7 @@
                         <buildable id="jinshaT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- SILVER PANE -->
+                    <!-- 银砂 -->
                     <pane id="yinshaPane" icon="yinsha.png" :descs="['yinshaPane_desc']">
                         <resource id="yinsha" />
                         <buildable id="yinshaS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -388,7 +382,7 @@
                         <buildable id="yinshaT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- HYDROGEN PANE -->
+                    <!-- 清气 -->
                     <pane id="qingqiPane" icon="qingqi.png" :descs="['qingqiPane_desc']">
                         <resource id="qingqi" />
                         <buildable id="qingqiS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -399,7 +393,7 @@
                         <buildable id="qingqiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- HELIUM PANE -->
+                    <!-- 太乙 -->
                     <pane id="taiyiPane" icon="taiyi.png" :descs="['taiyiPane_desc']">
                         <resource id="taiyi" />
                         <buildable id="taiyiS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -410,7 +404,7 @@
                         <buildable id="taiyiT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- ICE PANE -->
+                    <!-- 寒冰 -->
                     <pane id="hanbingPane" icon="hanbing.png" :descs="['hanbingPane_desc']">
                         <resource id="hanbing" />
                         <buildable id="hanbingS1" btnText="upgrade" collapse="true" unlocker="techCangku" />
@@ -421,7 +415,7 @@
                         <buildable id="hanbingT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techTier5" />
                     </pane>
                     
-                    <!-- SCIENCE PANE -->
+                    <!-- 悟道 -->
                     <pane id="wudaoPane" icon="wudao.png" :descs="['wudaoPane_desc']">
                         <buildable id="wudaoT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
                         <buildable id="wudaoT2" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techWudao2" />
@@ -430,7 +424,7 @@
                         <buildable id="wudaoT5" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techWudao5" />
                     </pane>
                     
-                    <!-- TECHNOLOGIES PANE -->
+                    <!-- 功法 -->
                     <pane id="gongfaPane" icon="gongfa.png" :descs="['gongfaPane_desc']">
                         <buildable id="techCangku" btnText="unlock" />
                         <buildable id="techZhenqi1" btnText="unlock" />
@@ -468,7 +462,7 @@
                         <buildable id="boostZhenqiCang" btnText="boost" />
                     </pane>
                     
-                    <!-- FUEL PANE -->
+                    <!-- 灵脉 -->
                     <pane id="lingmaiPane" icon="lingmai.png" :descs="['lingmaiPane_desc']">
                         <resource id="lingmai" />
                         <buildable id="lingmaiT1" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" />
@@ -476,13 +470,13 @@
                         <buildable id="lingmaiT3" btnText="build" collapse="true" :multibuy="data['multiBuy'].count > 0" calc="true" unlocker="techLingmai3" />
                     </pane>
                     
-                    <!-- ROCKET PANE -->
+                    <!-- 秘境入口 -->
                     <pane id="mijingRukouPane" icon="mijingRukou.png" :descs="['mijingRukouPane_desc']">
                         <buildable id="mijingRukou1" btnText="build" />
                         <buildable id="mijingRukou2" btnText="launch" unlocker="mijingRukou1" />
                     </pane>
                     
-                    <!-- INNER SOLAR SYSTEM PANE -->
+                    <!-- 凡界秘境 -->
                     <pane id="fanjieMijingPane" icon="fanjieMijing.png">
                         <buildable id="yuejing" btnText="explore" />
                         <buildable id="chenxing" btnText="explore" />
@@ -492,7 +486,7 @@
                         <buildable id="mijingStation" btnText="explore" unlocker="xingchen" />
                     </pane>
 
-                    <!-- OUTER SOLAR SYSTEM PANE -->
+                    <!-- 仙域秘境 -->
                     <pane id="xianyuMijingPane" icon="xianyuMijing.png">
                         <buildable id="suixing" btnText="explore" />
                         <buildable id="zhenxing" btnText="explore" />
@@ -503,7 +497,7 @@
                         <buildable id="zaohuaRukou1" btnText="explore" unlocker="zaohuaRukou0" />
                     </pane>
 
-                    <!-- WONDER STATION PANE -->
+                    <!-- 天道秘境 -->
                     <pane id="mijingStationPane" icon="mijingStation.png" :descs="['mijingStationPane_desc']">
                         <buildable id="mijingBaoshi0" btnText="build" />
                         <buildable id="mijingLingmu0" btnText="build" />
@@ -511,7 +505,7 @@
                         <buildable id="mijingTiandao0" btnText="build" />
                     </pane>
 
-                    <!-- FLOOR #1 PANE -->
+                    <!-- 洞天福地 -->
                     <pane id="dongtianPane" icon="dongtian.png">
                         <buildable id="mijingBaoshi1" btnText="activate" />
                         <buildable id="mijingLingmu1" btnText="activate" />
@@ -519,7 +513,7 @@
                         <buildable id="mijingTiandao1" btnText="activate" />
                     </pane>
 
-                    <!-- FLOOR #2 PANE -->
+                    <!-- 仙府灵核 -->
                     <pane id="xianfuPane" icon="xianfu.png">
                         <buildable id="mijingChuansong" btnText="activate" />
                         <buildable id="mijingFeizhou" btnText="activate" />
@@ -527,19 +521,19 @@
                         <buildable id="mijingChuansongMen" btnText="activate" />
                     </pane>
 
-                    <!-- FLOOR #3 PANE -->
+                    <!-- 天地法阵 -->
                     <pane id="tiandiFazhenPane" icon="tiandiFazhen.png">
                         <buildable id="mijingXingmen" btnText="activate" />
                     </pane>
                     
-                    <!-- SOL CENTER PANE -->
+                    <!-- 造化之炉 -->
                     <pane id="zaohuaPane" icon="zaohua.png">
                         <buildable id="techYuanshen0" btnText="unlock" />
                         <buildable id="techWuhua0" btnText="unlock" />
                         <buildable id="techDafazhen0" btnText="unlock" />
                     </pane>
                     
-                    <!-- EMC PANE -->
+                    <!-- 五行转化 -->
                     <pane id="wuhuaPane" icon="wuhua.png" :descs="['wuhuaPane_desc']">
                         <card checked="true">
                             <div class="col-12">
@@ -592,7 +586,7 @@
                         </card>
                     </pane>
                     
-                    <!-- DYSON PANE -->
+                    <!-- 护宗大阵 -->
                     <pane id="dafazhenPane" icon="dafazhen.png" :descs="['dafazhenPane_desc']">
                         <buildable id="lingzhenDuan" btnText="build" />
                         <buildable id="dafazhenT1" btnText="build" />
@@ -600,18 +594,18 @@
                         <buildable id="dafazhenT3" btnText="build" />
                     </pane>
                     
-                    <!-- ANTIMATTER PANE -->
+                    <!-- 反魂 -->
                     <pane id="fangunPane" icon="fangun.png" :descs="['fangunPane_desc']">
                         <buildable id="fangunT1" btnText="build" />
                     </pane>
                     
-                    <!-- COMMUNICATION PANE -->
+                    <!-- 灵音阵 -->
                     <pane id="lingyinPane" icon="lingyin.png" :descs="['lingyinPane_desc']">
                         <buildable id="lingyinT1" btnText="build" />
                         <buildable id="lingyinT2" btnText="build" />
                     </pane>
                     
-                    <!-- SPACESHIP PANE -->
+                    <!-- 飞舟 -->
                     <pane id="feizhouPane" icon="feizhou.png" :descs="['feizhouPane_desc']">
                         <buildable id="feizhou" btnText="build" />
                         <buildable id="huti" btnText="build" />
@@ -619,7 +613,7 @@
                         <buildable id="lingyi" btnText="build" />
                     </pane>
                     
-                    <!-- MILITARY PANE -->
+                    <!-- 弟子 -->
                     <pane id="diziPane" icon="military.png">
                         <fleet id="fleet" />
                         <buildable id="diziT1" btnText="build" />
@@ -629,7 +623,7 @@
                         <buildable id="diziT5" btnText="build" />
                     </pane>
                     
-                    <!-- INTERSTELLAR CARNELIAN PANE -->
+                    <!-- 赤焰宗秘境 -->
                     <pane id="chiyanMijingPane" icon="chiyan.png" :descs="['chiyanMijingPane_desc']">
                         <star id="star301"    /> <star id="star163901" /> <star id="star181901" /> <star id="star151801" /> <star id="star25401"  /> <star id="star146301" />
                         <star id="star122601" /> <star id="star79501"  /> <star id="star1501"   /> <star id="star79901"  /> <star id="star37601"  /> <star id="star123401" />
@@ -639,7 +633,7 @@
                         <star id="star191701" /> <star id="star199702" /> <star id="star21001"  /> <star id="star178302" /> <star id="star32201"  /> <star id="star74801"  />
                     </pane>
                     
-                    <!-- INTERSTELLAR PRASNIAN PANE -->
+                    <!-- 碧落宗秘境 -->
                     <pane id="biluoMijingPane" icon="biluo.png" :descs="['biluoMijingPane_desc']">
                         <star id="star401"    /> <star id="star25101"  /> <star id="star207601" /> <star id="star223901" /> <star id="star121101" /> <star id="star136701" />
                         <star id="star166402" /> <star id="star95001"  /> <star id="star175902" /> <star id="star56501"  /> <star id="star167801" /> <star id="star103201" />
@@ -649,7 +643,7 @@
                         <star id="star5201"   /> <star id="star223701" /> <star id="star166903" /> <star id="star32101"  /> <star id="star77801"  /> <star id="star205201" />
                     </pane>
                     
-                    <!-- INTERSTELLAR HYACINITE PANE -->
+                    <!-- 紫霄宗秘境 -->
                     <pane id="zixiaoMijingPane" icon="zixiao.png" :descs="['zixiaoMijingPane_desc']">
                         <star id="star201"    /> <star id="star217101" /> <star id="star166701" /> <star id="star179501" /> <star id="star6501"   /> <star id="star222401" />
                         <star id="star200001" /> <star id="star24201"  /> <star id="star224202" /> <star id="star92801"  /> <star id="star172701" /> <star id="star86401"  />
@@ -658,7 +652,7 @@
                         <star id="star27501"  /> <star id="star121601" /> <star id="star212102" /> <star id="star117501" />
                     </pane>
                     
-                    <!-- INTERSTELLAR KITRINOS PANE -->
+                    <!-- 金光宗秘境 -->
                     <pane id="jinguangMijingPane" icon="jinguang.png" :descs="['jinguangMijingPane_desc']">
                         <star id="star501"    /> <star id="star130601" /> <star id="star158101" /> <star id="star224601" /> <star id="star58601"  /> <star id="star10101"  />
                         <star id="star194201" /> <star id="star1101"   /> <star id="star72501"  /> <star id="star210501" /> <star id="star189701" /> <star id="star175601" />
@@ -668,7 +662,7 @@
                         <star id="star42501"  /> <star id="star80901"  /> <star id="star215902" /> <star id="star190502" /> <star id="star99701"  /> <star id="star176802" />
                     </pane>
                     
-                    <!-- INTERSTELLAR MOVITON PANE -->
+                    <!-- 玄冥宗秘境 -->
                     <pane id="xuanmingMijingPane" icon="xuanming.png" :descs="['xuanmingMijingPane_desc']">
                         <star id="star701"    /> <star id="star601"    /> <star id="star80101"  /> <star id="star213301" /> <star id="star13601"  /> <star id="star51801"  />
                         <star id="star35801"  /> <star id="star216801" /> <star id="star224101" /> <star id="star114001" /> <star id="star15301"  /> <star id="star69601"  />
@@ -680,7 +674,7 @@
                         <star id="star21601"  /> <star id="star63801"  /> <star id="star187202" />
                     </pane>
                     
-                    <!-- DARKMATTER PANE -->
+                    <!-- 天道法则 -->
                     <pane id="tiandaoLawPane" icon="tiandaoLaw.png" :descs="['tiandaoLawPane_desc1', 'tiandaoLawPane_desc2', 'tiandaoLawPane_desc3', 'tiandaoLawPane_desc4', 'tiandaoLawPane_desc5']">
                         <card id="tiandaoLaw" :descs="['tiandaoLaw_desc']">
                             <div class="col-12">
@@ -715,7 +709,7 @@
                         </card>
                     </pane>
                     
-                    <!-- STARGAZE CARNELIAN PANE -->
+                    <!-- 赤焰传承 -->
                     <pane id="chiyanChuanchengPane" icon="chiyan.png" :descs="['chiyanChuanchengPane_desc']">
                         <buildable id="upgradeLingqu" btnText="activate" />
                         <buildable id="upgradeCangku1" btnText="activate" />
@@ -724,7 +718,7 @@
                         <buildable id="upgradeCangku3" btnText="activate" />
                     </pane>
                     
-                    <!-- STARGAZE PRASNIAN PANE -->
+                    <!-- 碧落传承 -->
                     <pane id="biluoChuanchengPane" icon="biluo.png" :descs="['biluoChuanchengPane_desc']">
                         <buildable id="techYuanshen3" btnText="activate" />
                         <buildable id="upgradeMijing1" btnText="activate" />
@@ -735,7 +729,7 @@
                         <buildable id="techYuanshen4" btnText="activate" />
                     </pane>
                     
-                    <!-- STARGAZE HYACINITE PANE -->
+                    <!-- 紫霄传承 -->
                     <pane id="zixiaoChuanchengPane" icon="zixiao.png" :descs="['zixiaoChuanchengPane_desc']">
                         <buildable id="upgradeWudao1" btnText="activate" />
                         <buildable id="upgradeWudao2" btnText="activate" />
@@ -743,7 +737,7 @@
                         <buildable id="upgradeZhenqiBoost" btnText="activate" />
                     </pane>
                     
-                    <!-- STARGAZE KITRINOS PANE -->
+                    <!-- 金光传承 -->
                     <pane id="jinguangChuanchengPane" icon="jinguang.png" :descs="['jinguangChuanchengPane_desc']">
                         <buildable id="upgradeTier1" btnText="activate" />
                         <buildable id="techZhenqiCang5" btnText="activate" />
@@ -752,7 +746,7 @@
                         <buildable id="techTier5" btnText="activate" />
                     </pane>
                     
-                    <!-- STARGAZE MOVITON PANE -->
+                    <!-- 玄冥传承 -->
                     <pane id="xuanmingChuanchengPane" icon="xuanming.png" :descs="['xuanmingChuanchengPane_desc']">
                         <buildable id="upgradeLingmai1" btnText="activate" />
                         <buildable id="upgradeDizi" btnText="activate" />
@@ -760,13 +754,13 @@
                         <buildable id="techTiandao4" btnText="activate" />
                     </pane>
                     
-                    <!-- STARGAZE OVERLORD PANE -->
+                    <!-- 天道传承 -->
                     <pane id="tiandaoChuanchengPane" icon="tiandaoZhuZai.png" :descs="['tiandaoChuanchengPane_desc']">
                         <buildable id="boostTiandaoLaw" btnText="activate" />
                         <buildable id="upgradeZongmen" btnText="activate" />
                     </pane>
                         
-                    <!-- DONATING PANE -->
+                    <!-- 布施 -->
                     <pane id="donatingPane" icon="donating.png" :descs="['donatingPane_desc1', 'donatingPane_desc2']">
                         <card id="donatingPane_desc3" checked="true">
                             <div class="col-12">
@@ -789,7 +783,7 @@
                         </card>
                     </pane>
                     
-                    <!-- ACHIEVEMENTS PANE -->
+                    <!-- 成就 -->
                     <pane id="achievementPane" icon="trophy.png" :descs="['achievementPane_desc']">
                         <card id="currentRank" checked="true">
                             <div class="col-12">
@@ -962,7 +956,7 @@
                         </card>
                     </pane>
                     
-                    <!-- HELP PANE -->
+                    <!-- 帮助 -->
                     <pane id="helpPane" icon="help.png" :descs="['helpPane_desc']">
                         <card id="help1" :descs="['help1_desc1']" checked="true" />
                         <card id="help2" :descs="['help2_desc1', 'help2_desc2']" checked="true" />
@@ -970,7 +964,7 @@
                         <card id="help4" :descs="['help4_desc1']" checked="true" />
                     </pane>
                     
-                    <!-- OPTIONS PANE -->
+                    <!-- 设置 -->
                     <pane id="settingsPane" icon="cog.png" :descs="['settingsPane_desc']">
                         <card id="companyName" checked="true">
                             <div class="col-12">
@@ -1052,7 +1046,7 @@
                         </card>
                     </pane>
                     
-                    <!-- ABOUT PANE -->
+                    <!-- 关于 -->
                     <pane id="aboutPane" icon="about.png" :descs="['aboutPane_desc']">
                         <card id="about1" :descs="['about1_desc1']" checked="true">
                             <div class="col-12 small">
@@ -1107,7 +1101,7 @@
                         </card>
                     </pane>
                     
-                    <!-- RANK PANE -->
+                    <!-- 排行 -->
                     <pane id="rankPane" icon="rank.png" :descs="['jingjiePane_desc']">
                         <card id="account" :checked="token != null">
                             <div v-if="token" class="col-12">

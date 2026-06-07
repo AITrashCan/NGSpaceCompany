@@ -1,17 +1,17 @@
 <template>
-    <div v-if="data[id].unlocked || (!data[id].unlocked && displayLockedItems == true)" class="col" role="article">
+    <div v-if="data[id].unlocked || displayLockedItems" class="col" role="article">
         <div class="row gx-2">
             <div class="col-auto">
             
                 <div v-if="!data[id].unlocked" class="timeline-marker">
                     <i class="fas fa-fw fa-lock text-muted"></i>
                 </div>
-                
-                <div v-if="data[id].unlocked && data[id].max && data[id].count >= data[id].max" class="timeline-marker">
+
+                <div v-else-if="data[id].max && data[id].count >= data[id].max" class="timeline-marker">
                     <i class="fas fa-fw fa-check text-success"></i>
                 </div>
-                
-                <div v-if="(data[id].unlocked && data[id].max && data[id].count < data[id].max) || (data[id].unlocked && !data[id].max)" class="timeline-marker">                
+
+                <div v-else class="timeline-marker">                
                     
                     <i v-if="!collapse" class="fas fa-fw fa-lock-open"></i>
                     
@@ -33,8 +33,8 @@
                         </span>
                     </span>
                 </div>
-                
-                <div v-if="data[id].unlocked && data[id].max && data[id].count >= data[id].max" class="card card-body">
+
+                <div v-else-if="data[id].max && data[id].count >= data[id].max" class="card card-body">
                     <div class="row g-1">
                         <div class="col">
                             <span class="h6 text-light mb-0">{{ $t(data[id].id) }}</span>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 
-                <div v-if="(data[id].unlocked && data[id].max && data[id].count < data[id].max) || (data[id].unlocked && !data[id].max)" class="card card-body">
+                <div v-else class="card card-body">
                     <div v-if="isCollapsed(id)" class="row g-3">
                         <div class="col-12 col-md-6">
                             <div class="row g-1">
@@ -90,7 +90,7 @@
                                                 <span class="text-danger">{{ $t('destroy') }}</span>
                                             </button>
                                         </div>
-                                        <div v-if="multibuy == true" class="col-auto">
+                                        <div v-if="multibuy" class="col-auto">
                                             <button class="btn btn-danger" @click="destroy({id:id, count:10000})">
                                                 <span class="text-danger">{{ $t('nukeAll') }}</span>
                                             </button>
@@ -160,7 +160,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <small v-if="data[id].storage.id != 'zhenqi'" class="text-success">+{{ numeralFormat(data[id].storage.count.toPrecision(4), '0.[000]a') }}</small>
-                                            <small v-if="data[id].storage.id == 'zhenqi'" class="text-success">+{{ numeralFormat((data[id].storage.count * (1 + (0.01 * data['boostZhenqiCang'].count))).toPrecision(4), '0.[000]a') }}</small>
+                                            <small v-else class="text-success">+{{ numeralFormat((data[id].storage.count * (1 + (0.01 * data['boostZhenqiCang'].count))).toPrecision(4), '0.[000]a') }}</small>
                                         </div>
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <small v-if="input.id == 'zhenqi'" class="text-warning text-uppercase">-{{ numeralFormat((input.count * (1 - (0.01 * data['boostZhenqi'].count))).toPrecision(4), '0.[000]a') }}</small>
-                                            <small v-if="input.id != 'zhenqi'" class="text-warning text-uppercase">-{{ numeralFormat(input.count.toPrecision(4), '0.[000]a') }}</small>
+                                            <small v-else class="text-warning text-uppercase">-{{ numeralFormat(input.count.toPrecision(4), '0.[000]a') }}</small>
                                             <small class="text-normal ms-1">/s</small>
                                         </div>
                                     </div>

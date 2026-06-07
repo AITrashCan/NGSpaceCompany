@@ -28,14 +28,14 @@
                 <small class="text-light">{{ $t(cost.id) }}</small>
             </div>
             <div class="col-auto">
-                <small v-if="!cost.timer || cost.timer > -2" class="text-uppercase text-light">{{ numeralFormat(cost.count.toPrecision(4), '0.[000]a') }}</small>
-                <small v-if="cost.timer <= -2" class="text-uppercase text-danger">{{ numeralFormat(cost.count.toPrecision(4), '0.[000]a') }}</small>
+                <small v-if="cost.timer > -2" class="text-uppercase text-light">{{ numeralFormat(cost.count.toPrecision(4), '0.[000]a') }}</small>
+                <small v-else class="text-uppercase text-danger">{{ numeralFormat(cost.count.toPrecision(4), '0.[000]a') }}</small>
             </div>
             <div class="col-auto text-end" style="width:75px">
-                <small v-if="(!cost.timer && cost.timer != 0) || cost.timer < 0" class="text-normal">---</small>
-                <small v-if="cost.timer == 0" class="text-success"><i class="fas fa-fw fa-check"></i></small>
-                <small v-if="cost.timer > 0 && cost.timer <= (3600 * 24 * 2)" class="text-timer" role="timer">{{ numeralFormat(cost.timer, '00:00:00') }}</small>
-                <small v-if="cost.timer > (3600 * 24 * 2)" class="text-timer">{{ $t('bigTimer') }}</small>
+                <small v-if="cost.timer == null" class="text-normal">---</small>
+                <small v-else-if="cost.timer == 0" class="text-success"><i class="fas fa-fw fa-check"></i></small>
+                <small v-else-if="cost.timer <= (3600 * 24 * 2)" class="text-timer" role="timer">{{ numeralFormat(cost.timer, '00:00:00') }}</small>
+                <small v-else class="text-timer">{{ $t('bigTimer') }}</small>
             </div>
         </div>
     </div>

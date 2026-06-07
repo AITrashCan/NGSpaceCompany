@@ -5,8 +5,8 @@
                 <div class="timeline-marker">
                 
                     <i v-if="!data[id].unlocked" class="fas fa-fw fa-lock text-muted"></i>
-                    <i v-if="data[id].unlocked && data[id].status != 'owned'" class="fas fa-fw fa-lock-open"></i>
-                    <i v-if="data[id].unlocked && data[id].status == 'owned'" class="fas fa-fw fa-check text-success"></i>
+                    <i v-else-if="data[id].status != 'owned'" class="fas fa-fw fa-lock-open"></i>
+                    <i v-else class="fas fa-fw fa-check text-success"></i>
                     
                 </div>
             </div>
@@ -15,8 +15,8 @@
                 <div v-if="!data[id].unlocked" class="card card-body">
                     <span class="text-muted">{{ $t('locked') }}</span>
                 </div>
-                
-                <div v-if="data[id].unlocked && data[id].status == 'owned'" class="card card-body">
+
+                <div v-else-if="data[id].status == 'owned'" class="card card-body">
                     <div class="row g-1">
                         <div class="col-12">
                             <span class="h6 text-light mb-0">{{ $t(data[id].id) }}</span>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 
-                <div v-if="data[id].unlocked && data[id].status != 'owned'" class="card card-body">
+                <div v-else class="card card-body">
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
                             <div class="row g-3">

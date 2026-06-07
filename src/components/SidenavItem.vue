@@ -40,13 +40,13 @@
         display: block; width: 100%; text-align: left;
         background: transparent; border: 0; border-radius: .25rem;
         padding: .25rem;
-        color: #f5f5f5; line-height: 1.5rem; text-decoration: none;
+        color: #e8e6f0; line-height: 1.5rem; text-decoration: none;
         cursor: pointer;
     }
 
     .sidenav-item:hover, .sidenav-item:focus, .sidenav-item.active {
-        color: #f5f5f5;
-        background-color: rgba(255,255,255,.125);
+        color: #e8e6f0;
+        background-color: rgba(200,180,255,.1);
     }
 </style>
 

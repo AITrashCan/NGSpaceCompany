@@ -11,7 +11,7 @@
 
 <style>
     .sidenav-group {
-        color: #8c949a; font-size: .75rem; text-transform: uppercase;
+        color: #8890a8; font-size: .75rem; text-transform: uppercase;
         width: 100%; padding: 0 0 .25rem;
         background: transparent; border: 0;
         cursor: pointer;
@@ -19,7 +19,7 @@
     }
 
     .sidenav-group:hover {
-        color: #f5f5f5;
+        color: #b0a8d0;
     }
 
     .sidenav-group::after {

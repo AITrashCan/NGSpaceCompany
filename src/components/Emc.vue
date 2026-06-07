@@ -30,7 +30,7 @@
                 <div class="col-12">
                     <div class="row gx-3 align-items-center">
                         <div v-if="data['autoWuhua'].count > 0" class="col-auto">
-                            <button class="btn" :class="{ 'btn-outline':autoResource!=id, 'btn-success':autoResource==id }" @click="setAutoEmc(id)">
+                            <button class="btn" :class="{ 'btn-outline':autoResource!==id, 'btn-success':autoResource===id }" @click="setAutoEmc(id)">
                                 {{ $t('auto') }}
                             </button>
                         </div>
