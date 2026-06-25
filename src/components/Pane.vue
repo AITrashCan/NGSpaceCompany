@@ -4,7 +4,7 @@
             <div class="col">
                 <div class="row gx-2">
                     <div class="col-auto d-flex align-items-baseline">
-                        <img :src="require(`../assets/interface/${icon}`)" class="mx-2 mt-1" width="19" height="19" />
+                        <span class="icon-emoji-lg">{{ getInterfaceIcon(icon) }}</span>
                     </div>
                     <div class="col">
                         <div class="row row-cols-1 g-2">
@@ -24,7 +24,12 @@
 </template>
 
 <script>
+import { getInterfaceIcon } from '../utils/assets'
+
 export default {
+    methods: {
+        getInterfaceIcon,
+    },
     props: [ 'id', 'icon', 'descs' ],
 }
 </script>

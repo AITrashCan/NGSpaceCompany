@@ -266,3 +266,9 @@ button {
 .table > :not(:last-child) > :last-child > * { border-bottom-color: inherit; }
 
 /* -------------------------------------------------------------------------- */
+
+/* Emoji icon sizing */
+.icon-emoji { font-style: normal; line-height: 1; }
+.icon-emoji-sm { font-size: 12px; font-style: normal; line-height: 1; }
+.icon-emoji-md { font-size: 16px; font-style: normal; line-height: 1; }
+.icon-emoji-lg { font-size: 19px; font-style: normal; line-height: 1; }

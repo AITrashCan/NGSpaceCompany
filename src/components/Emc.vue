@@ -5,7 +5,7 @@
                 <div class="col">
                     <div class="row g-1 align-items-baseline justify-content-center">
                         <div class="col-auto d-flex align-items-center">
-                            <img :src="require(`../assets/interface/${data[id].source}.png`)" width="12" height="12" />
+                            <span class="icon-emoji-sm">{{ getInterfaceIcon(data[id].source) }}</span>
                         </div>
                         <div class="col-auto text-center">
                             <div class="small">{{ $t(data[id].source) }}</div>
@@ -19,7 +19,7 @@
                 <div class="col">
                     <div class="row g-1 align-items-baseline justify-content-center">
                         <div class="col-auto d-flex align-items-center">
-                            <img :src="require(`../assets/interface/${data[id].resource}.png`)" width="12" height="12" />
+                            <span class="icon-emoji-sm">{{ getInterfaceIcon(data[id].resource) }}</span>
                         </div>
                         <div class="col-auto text-center">
                             <div class="small">{{ $t(data[id].resource) }}</div>
@@ -29,8 +29,8 @@
                 </div>
                 <div class="col-12">
                     <div class="row gx-3 align-items-center">
-                        <div v-if="data['autoEmc'].count > 0" class="col-auto">
-                            <button class="btn" :class="{ 'btn-outline':autoResource!=id, 'btn-success':autoResource==id }" @click="setAutoEmc(id)">
+                        <div v-if="data['autoAlchemy'].count > 0" class="col-auto">
+                            <button class="btn" :class="{ 'btn-outline':autoResource!=id, 'btn-success':autoResource==id }" @click="setAutoAlchemy(id)">
                                 {{ $t('auto') }}
                             </button>
                         </div>
@@ -47,31 +47,33 @@
 </template>
 
 <script>
+import { getInterfaceIcon } from '../utils/assets'
 import { mapState, mapActions, mapMutations } from 'vuex'
 
 export default {
     props: [ 'id' ],
     computed: {
         ...mapState([
-            'data', 'emcAmount', 'autoResource'
+            'data', 'alchemyAmount', 'autoResource'
         ]),
         sourceCount: function() {
-            if (this.emcAmount == 'max') return Math.floor((this.data[this.data[this.id].source].count - this.data[this.data[this.id].source].consumption) / this.data[this.id].rate) * this.data[this.id].rate
-            else return Math.min(this.emcAmount, Math.floor(this.data[this.data[this.id].source].count / this.data[this.id].rate)) * this.data[this.id].rate
+            if (this.alchemyAmount == 'max') return Math.floor((this.data[this.data[this.id].source].count - this.data[this.data[this.id].source].consumption) / this.data[this.id].rate) * this.data[this.id].rate
+            else return Math.min(this.alchemyAmount, Math.floor(this.data[this.data[this.id].source].count / this.data[this.id].rate)) * this.data[this.id].rate
         },
         destinationCount: function() {
-            if (this.emcAmount == 'max') return Math.floor((this.data[this.data[this.id].source].count - this.data[this.data[this.id].source].consumption) / this.data[this.id].rate)
-            else return Math.floor(Math.min(this.emcAmount, this.data[this.data[this.id].source].count / this.data[this.id].rate))
+            if (this.alchemyAmount == 'max') return Math.floor((this.data[this.data[this.id].source].count - this.data[this.data[this.id].source].consumption) / this.data[this.id].rate)
+            else return Math.floor(Math.min(this.alchemyAmount, this.data[this.data[this.id].source].count / this.data[this.id].rate))
         },
     },
     methods: {
+        getInterfaceIcon,
         ...mapMutations([
             'setAutoResource',
         ]),
         ...mapActions([
             'convert',
         ]),
-        setAutoEmc(id) {
+        setAutoAlchemy(id) {
         
             if (this.autoResource == id) this.setAutoResource(null)
             else this.setAutoResource(id)

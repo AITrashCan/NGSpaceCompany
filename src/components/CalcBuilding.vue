@@ -6,7 +6,7 @@
             </div>
             <div v-for="cost in data[id].baseCosts" :key="cost.id" class="row g-1">
                 <div class="col-auto d-flex align-items-center">
-                    <img :src="require(`../assets/interface/${cost.id}.png`)" width="12" height="12" />
+                    <span class="icon-emoji-sm">{{ getInterfaceIcon(cost.id) }}</span>
                 </div>
                 <div class="col">
                     <small class="text-light">{{ $t(cost.id) }}</small>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { getInterfaceIcon } from '../utils/assets'
 import { mapState } from 'vuex'
 
 export default {
@@ -41,6 +42,7 @@ export default {
         ]),
     },
     methods: {
+        getInterfaceIcon,
         countTo(limit) {
             return limit - this.data[this.id].count 
         },

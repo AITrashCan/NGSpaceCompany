@@ -8,8 +8,8 @@
                 <div v-if="mod && mod > 1" class="col-auto">
                     <span class="text-lowercase">x</span>{{ mod }}
                 </div>
-                <div v-if="id && id == 'segment'" class="col text-end">
-                    <button @click="$root.segmentModal.show();">
+                <div v-if="id && id == 'formationCore'" class="col text-end">
+                    <button @click="$root.formationCoreModal.show();">
                         <i class="fas fa-fw fa-calculator"></i>
                     </button>
                 </div>
@@ -22,7 +22,7 @@
         </div>
         <div v-for="cost in costs" :key="cost.id" class="row g-1">
             <div class="col-auto d-flex align-items-center">
-                <img :src="require(`../assets/interface/${cost.id}.png`)" width="12" height="12" />
+                <span class="icon-emoji-sm">{{ getInterfaceIcon(cost.id) }}</span>
             </div>
             <div class="col">
                 <small class="text-light">{{ $t(cost.id) }}</small>
@@ -42,7 +42,12 @@
 </template>
 
 <script>
+import { getInterfaceIcon } from '../utils/assets'
+
 export default {
+    methods: {
+        getInterfaceIcon,
+    },
     props: [ 'costs', 'mod', 'id', 'calc' ],
 }
 </script>

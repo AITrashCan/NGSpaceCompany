@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                                 
-                                <div v-if="data['techDestruction'].count > 0 && data[id].destroyable" class="col-12">
+                                <div v-if="data['techDecommission'].count > 0 && data[id].destroyable" class="col-12">
                                     <div class="row g-1">
                                         <div class="col-auto">
                                             <button class="btn btn-danger" @click="destroy({id:id, count:1})">
@@ -98,31 +98,31 @@
                                     </div>
                                 </div>
                             
-                                <div v-if="id == 'nanoswarm'" class="col-12">
+                                <div v-if="id == 'shadowNetwork'" class="col-12">
                                     <div class="small">{{ $t('selectResource') }}</div>
                                     <select class="form-control" v-model="selected" @change="switchNano(selected)">
-                                        <option value="energy">{{ $t('energy') }}</option>
-                                        <option value="plasma">{{ $t('plasma') }}</option>
-                                        <option value="meteorite">{{ $t('meteorite') }}</option>
-                                        <option value="carbon">{{ $t('carbon') }}</option>
-                                        <option value="oil">{{ $t('oil') }}</option>
-                                        <option value="metal">{{ $t('metal') }}</option>
-                                        <option value="gem">{{ $t('gem') }}</option>
-                                        <option value="wood">{{ $t('wood') }}</option>
-                                        <option value="silicon">{{ $t('silicon') }}</option>
-                                        <option value="uranium">{{ $t('uranium') }}</option>
-                                        <option value="lava">{{ $t('lava') }}</option>
-                                        <option value="lunarite">{{ $t('lunarite') }}</option>
-                                        <option value="methane">{{ $t('methane') }}</option>
-                                        <option value="titanium">{{ $t('titanium') }}</option>
+                                        <option value="vitality">{{ $t('vitality') }}</option>
+                                        <option value="dragonFire">{{ $t('dragonFire') }}</option>
+                                        <option value="starIron">{{ $t('starIron') }}</option>
+                                        <option value="charcoal">{{ $t('charcoal') }}</option>
+                                        <option value="saltpeter">{{ $t('saltpeter') }}</option>
+                                        <option value="iron">{{ $t('iron') }}</option>
+                                        <option value="jade">{{ $t('jade') }}</option>
+                                        <option value="timber">{{ $t('timber') }}</option>
+                                        <option value="bronze">{{ $t('bronze') }}</option>
+                                        <option value="cinnabar">{{ $t('cinnabar') }}</option>
+                                        <option value="magma">{{ $t('magma') }}</option>
+                                        <option value="moonSilver">{{ $t('moonSilver') }}</option>
+                                        <option value="niter">{{ $t('niter') }}</option>
+                                        <option value="darkSteel">{{ $t('darkSteel') }}</option>
                                         <option value="gold">{{ $t('gold') }}</option>
                                         <option value="silver">{{ $t('silver') }}</option>
-                                        <option value="hydrogen">{{ $t('hydrogen') }}</option>
-                                        <option value="helium">{{ $t('helium') }}</option>
-                                        <option value="ice">{{ $t('ice') }}</option>
-                                        <option value="science">{{ $t('science') }}</option>
-                                        <option value="fuel">{{ $t('fuel') }}</option>
-                                        <option value="antimatter">{{ $t('antimatter') }}</option>
+                                        <option value="spiritVein">{{ $t('spiritVein') }}</option>
+                                        <option value="voidEssence">{{ $t('voidEssence') }}</option>
+                                        <option value="frostCrystal">{{ $t('frostCrystal') }}</option>
+                                        <option value="scholarship">{{ $t('scholarship') }}</option>
+                                        <option value="warFuel">{{ $t('warFuel') }}</option>
+                                        <option value="chaosEssence">{{ $t('chaosEssence') }}</option>
                                     </select>
                                 </div>
                                 
@@ -153,14 +153,14 @@
                                     <div class="heading-6">{{ $t('storage') }}</div>
                                     <div class="row g-1">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="require(`../assets/interface/${data[id].storage.id}.png`)" width="12" height="12" />
+                                            <span class="icon-emoji-sm">{{ getInterfaceIcon(data[id].storage.id) }}</span>
                                         </div>
                                         <div class="col">
                                             <small class="text-light">{{ $t(data[id].storage.id) }}</small>
                                         </div>
                                         <div class="col-auto">
-                                            <small v-if="data[id].storage.id != 'energy'" class="text-success">+{{ numeralFormat(data[id].storage.count.toPrecision(4), '0.[000]a') }}</small>
-                                            <small v-if="data[id].storage.id == 'energy'" class="text-success">+{{ numeralFormat((data[id].storage.count * (1 + (0.01 * data['boostEnergyStorage'].count))).toPrecision(4), '0.[000]a') }}</small>
+                                            <small v-if="data[id].storage.id != 'vitality'" class="text-success">+{{ numeralFormat(data[id].storage.count.toPrecision(4), '0.[000]a') }}</small>
+                                            <small v-if="data[id].storage.id == 'vitality'" class="text-success">+{{ numeralFormat((data[id].storage.count * (1 + (0.01 * data['boostVitalityStorage'].count))).toPrecision(4), '0.[000]a') }}</small>
                                         </div>
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@
                                     <div class="heading-6">{{ $t('production') }}</div>
                                     <div v-for="output in data[id].outputs" :key="output.id" class="row g-1">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="require(`../assets/interface/${output.id}.png`)" width="12" height="12" />
+                                            <span class="icon-emoji-sm">{{ getInterfaceIcon(output.id) }}</span>
                                         </div>
                                         <div class="col">
                                             <small class="text-light">{{ $t(output.id) }}</small>
@@ -181,14 +181,14 @@
                                     </div>
                                     <div v-for="input in data[id].inputs" :key="input.id" class="row g-1">
                                         <div class="col-auto d-flex align-items-center">
-                                            <img :src="require(`../assets/interface/${input.id}.png`)" width="12" height="12" />
+                                            <span class="icon-emoji-sm">{{ getInterfaceIcon(input.id) }}</span>
                                         </div>
                                         <div class="col">
                                             <small class="text-light">{{ $t(input.id) }}</small>
                                         </div>
                                         <div class="col-auto">
-                                            <small v-if="input.id == 'energy'" class="text-warning text-uppercase">-{{ numeralFormat((input.count * (1 - (0.01 * data['boostEnergy'].count))).toPrecision(4), '0.[000]a') }}</small>
-                                            <small v-if="input.id != 'energy'" class="text-warning text-uppercase">-{{ numeralFormat(input.count.toPrecision(4), '0.[000]a') }}</small>
+                                            <small v-if="input.id == 'vitality'" class="text-warning text-uppercase">-{{ numeralFormat((input.count * (1 - (0.01 * data['boostVitality'].count))).toPrecision(4), '0.[000]a') }}</small>
+                                            <small v-if="input.id != 'vitality'" class="text-warning text-uppercase">-{{ numeralFormat(input.count.toPrecision(4), '0.[000]a') }}</small>
                                             <small class="text-normal ms-1">/s</small>
                                         </div>
                                     </div>
@@ -202,7 +202,7 @@
                                 <costs :costs="data[id].costs" :id="id" :calc="calc" />
                                 
                                 <div class="col-12">
-                                    <div v-if="id != 'segment'" class="row g-1 justify-content-end">
+                                    <div v-if="id != 'formationCore'" class="row g-1 justify-content-end">
                                         <div v-if="multibuy == true && data[id].count < 5" class="col-auto"><button class="btn" @click="build({id:id, upto:5})">= 5</button></div>
                                         <div v-if="multibuy == true && data[id].count < 25" class="col-auto"><button class="btn" @click="build({id:id, upto:25})">= 25</button></div>
                                         <div v-if="multibuy == true && data[id].count < 75" class="col-auto"><button class="btn" @click="build({id:id, upto:75})">= 75</button></div>
@@ -210,7 +210,7 @@
                                         <div v-if="multibuy == true && data[id].count < 250" class="col-auto"><button class="btn" @click="build({id:id, upto:250})">= 250</button></div>
                                         <div class="col-auto"><button class="btn" @click="build({id:id, count:1})">{{ $t(btnText) }} 1</button></div>
                                     </div>
-                                    <div v-if="id == 'segment'" class="row g-1 justify-content-end">
+                                    <div v-if="id == 'formationCore'" class="row g-1 justify-content-end">
                                         <div class="col-auto"><button class="btn" @click="build({id:id, upto:50})">= 50</button></div>
                                         <div class="col-auto"><button class="btn" @click="build({id:id, upto:100})">= 100</button></div>
                                         <div class="col-auto"><button class="btn" @click="build({id:id, upto:250})">= 250</button></div>
@@ -229,6 +229,7 @@
 </template>
 
 <script>
+import { getInterfaceIcon } from '../utils/assets'
 import Costs from './Costs.vue'
 
 import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
@@ -244,7 +245,7 @@ export default {
         }
     },
     created() {
-        this.selected = this.id == 'nanoswarm' ? this.data[this.id].resource : null
+        this.selected = this.id == 'shadowNetwork' ? this.data[this.id].resource : null
     },
     computed: {
         ...mapState([
@@ -255,6 +256,7 @@ export default {
         ]),
     },
     methods: {
+        getInterfaceIcon,
         ...mapActions([
             'build', 'destroy', 'switchNano',
         ]),

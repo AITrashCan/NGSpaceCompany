@@ -1,17 +1,45 @@
-# NG Space Company
+# Rise of Empire (架空帝国)
 
-Incremental space game about resource mining, interstellar exploration and system conquest
+An alternate-history incremental game where you start as an abandoned foundling, defying fate to become a warlord and emperor. Build your empire from a humble village to a sprawling dominion through resource management, technological advancement, and military conquest.
 
-This game has been made as a remake of the original game from Sparticle999. Of course I have the authorization from Sparticle999 to do it. I made this game to improve my skills in VueJS and to get knowledge about incremental games.
+This game is a themed remake of NG Space Company by Sparticle999, with authorization from the original author. The codebase has been migrated from Vue CLI (webpack 4) to Vite for modern build tooling.
 
-These are links to everything NG Space Company outside of the game itself.
+## Tech Stack
 
-NG Site https://ngspacecompany.exileng.com
+- Vue 3 + Vuex 4 + vue-i18n 9
+- Vite 8 (migrated from Vue CLI / webpack 4)
+- Bootstrap 5
+- Emoji-based icon system (no image dependencies)
 
-NG Discord https://discord.gg/3UkgeeT9CV
+## Getting Started
 
-Original Site https://sparticle999.github.io/spacecompany
+```bash
+# Install dependencies (requires Node.js 20+)
+npm install
 
-Original Github https://github.com/sparticle999/SpaceCompany
+# Start dev server
+npm run dev
 
-Original Discord https://discord.gg/hgRUjVp
+# Production build
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Internationalization
+
+Supported locales:
+- zh (Chinese, default)
+- en (English)
+- fr (French)
+
+Locale files are in `src/locales/`.
+
+## Links
+
+Original NG Space Company site: https://ngspacecompany.exileng.com
+
+Original game by Sparticle999: https://sparticle999.github.io/spacecompany
+
+Original GitHub: https://github.com/sparticle999/SpaceCompany
